@@ -1,0 +1,219 @@
+\ProvidesFile{cheatsheet.sty}
+\ProvidesPackage{cheatsheet}
+
+%______________________________________________________________________________
+%                                                                META VARIABLES
+\newcommand{\sopName}{sopName}
+\newcommand{\sopVersion}{01--01--1970}
+\newcommand{\sopRegion}{sopRegion}
+\newcommand{\sopDisclaimer}{sopDisclaimer}
+\newcommand{\sopURL}{http://rettungsdienst-rlp.de}
+\newcommand{\sopEditor}{(xxx)}
+\newcommand{\sopContent}{content}
+
+
+%______________________________________________________________________________
+%                                                                        BASICS
+\usepackage[cmyk]{xcolor}
+\usepackage{eso-pic}   % AddToShipoutPicture support
+\usepackage{multicol}  % 2-columns
+
+
+%______________________________________________________________________________
+%                                                                        COLORS
+\DefineNamedColor{named}{myBlue}{RGB}{32,109,252}
+\DefineNamedColor{named}{myGrey}{RGB}{35, 33, 30}
+
+
+%______________________________________________________________________________
+%                                                                      GEOMETRY
+\usepackage[driver=none]{geometry}
+\geometry{%
+  a6paper,
+  textwidth=96mm,
+  textheight=138mm,
+  top=6mm,
+  bottom=4mm,
+  columnsep=7mm,
+}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1mm}
+
+
+%______________________________________________________________________________
+%                                                                         FONTS
+\usepackage{fontspec}
+\defaultfontfeatures{Path = fonts/}
+\usepackage{fontawesome}
+
+\newcommand{\fsNormal}{\fontsize{10pt}{12pt plus 0.125pt minus 0.125pt}}
+\newcommand{\fsSmall}{\fontsize{9pt}{11pt plus 0.125pt minus 0.125pt}}
+\renewcommand{\normalsize}{\fsNormal\selectfont}
+\renewcommand{\small}{\fsSmall\selectfont}
+
+\newfontfamily{\fftext}[
+  Mapping=tex-text,
+  UprightFont={SourceSansPro-Light},
+  ItalicFont={SourceSansPro-LightItalic},
+  BoldFont={SourceSansPro-Semibold},
+  BoldItalicFont={SourceSansPro-SemiboldItalic}
+]{SourceSansPro}
+\newfontfamily{\ffextra}[
+  Mapping=tex-text
+]{SourceSansPro-Regular}
+\newfontfamily{\fffancy}[
+  Mapping=tex-text,
+  UprightFont={SourceSansPro-Black},
+  ItalicFont={SourceSansPro-BlackItalic},
+  BoldFont={SourceSansPro-Black},
+  BoldItalicFont={SourceSansPro-BlackItalic}
+]{SourceSansPro}
+
+
+%______________________________________________________________________________
+%                                                             IMAGES & GRAPHICS
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+
+
+%______________________________________________________________________________
+%                                                                  COMMON ITEMS
+\newcommand{\puls}{\faHeartbeat{} }
+\newcommand{\frau}{\faFemale}
+\newcommand{\mann}{\faMale}
+\newcommand{\erw}{\faMale\faFemale}
+
+\newcommand{\dosierung}[1]{\centerline{\textbf{#1}}}
+\newenvironment{kontraindikationen}
+  {\begin{itemize}\renewcommand{\labelitemi}{\faSignIn}}{\end{itemize}}
+
+
+
+% --- tables -----------------------------------------------------------
+%\usepackage{tabularx}
+%\usepackage{colortbl}
+%\usepackage{ragged2e}
+%\usepackage{multirow}
+
+%\renewcommand{\tabcolsep}{1mm}
+
+%\newcolumntype{x}[1]{%
+%>{\raggedright\hspace{0pt}}p{#1}%
+%}
+%\newcolumntype{y}[1]{%
+%>{\centering\hspace{0pt}}p{#1}%
+%}
+%\newcolumntype{z}[1]{%
+%>{\raggedleft\hspace{0pt}}p{#1}%
+%}
+
+%\newcommand{\thead}[1]{\textup{\color{white}#1}}
+%\newcommand{\tn}{\tabularnewline}
+
+%\newcommand{\tabelle}[4][\ffextra\small]{\renewcommand{\arraystretch}{0.95}{
+%{#1%
+%\vspace{2pt plus 6pt}%
+%\noindent%
+%\rowcolors[]{1}{secondary}{}%
+%\RaggedRight\setlength{\extrarowheight}{0.15\baselineskip}%
+%\begin{tabularx}{\columnwidth}{#2}
+%\rowcolor{primary}
+%#3
+%#4
+%\end{tabularx}\vspace{2pt plus 6pt}}}}
+
+
+%______________________________________________________________________________
+%                                                                    BACKGROUND
+\newcommand{\background}{}
+\AddToShipoutPicture{\background}
+
+\renewcommand{\background}{%
+  \begin{tikzpicture}
+    \fill[myGrey] (0,0) rectangle (\paperwidth,\paperheight);
+    \ifnum\thepage=1\relax
+      \fill[myBlue]
+        (\paperwidth,\paperheight) rectangle ++(-\paperwidth,-40mm);
+    \else
+      \fill[myBlue]
+        (\paperwidth,\paperheight) rectangle ++(-\paperwidth,-2mm);
+    \fi
+    \fill[myBlue]
+      (0,0) rectangle ++(\paperwidth,2mm);
+  \end{tikzpicture}
+}
+
+
+%______________________________________________________________________________
+%                                                                     STRUCTURE
+\renewcommand{\maketitle}{%
+  \begin{multicols}{2}
+    \raggedbottom\color{white}
+    \noindent
+    \parbox[c][30mm][c]{\columnwidth}{%
+      \centerline{\fffancy\fontsize{42pt}{42pt}\selectfont\color{white}{%
+        \addfontfeature{LetterSpace=-2.0}SOP}
+      }
+      \centerline{\fffancy\fontsize{27pt}{27pt}\selectfont\color{white}{%
+        \addfontfeature{LetterSpace=-2.0}CHEAT}
+      }
+      \centerline{\fffancy\fontsize{27pt}{27pt}\selectfont\color{white}{%
+        \addfontfeature{LetterSpace=-2.0}SHEET}
+      }
+      \vspace*{1mm}
+      \centerline{\textbf{\sopRegion}}
+      \vspace*{1mm}
+      \centerline{%
+        \parbox[b]{10mm}{\fontsize{7pt}{7pt}\selectfont\raggedleft{version}}
+        \parbox[b]{25mm}{\fontsize{11pt}{11pt}\selectfont\sopVersion}
+      }
+    }
+
+    \noindent
+    \parbox[c][30mm][c]{\columnwidth}{%
+      \noindent\textit{\fontsize{8pt}{8pt}\selectfont\sopDisclaimer}
+      \vspace*{2mm}
+
+      \centerline{\sopURL}
+    }
+    \raggedleft{\tiny\sopEditor}
+  \end{multicols}
+  \vspace*{-0.7em}
+  \centerline{%
+    \begin{tikzpicture}%
+      \node[minimum height=1.25cm, minimum width=\paperwidth, fill=white] (s)
+        {\fontsize{24pt}{24pt}\selectfont\color{myBlue} \sopName};
+      \draw [color=myBlue, ultra thick] (s.south west)--(s.south east);
+      \draw [color=myBlue, ultra thick] (s.north west)--(s.north east);
+    \end{tikzpicture}
+  }
+}
+
+\usepackage[framemethod=tikz]{mdframed}
+\newmdenv[
+  backgroundcolor=white,
+  roundcorner=4pt,
+  frametitlefont=\fftext\fontsize{16pt}{16pt}\selectfont\color{myBlue},
+  frametitlerule=true,
+  frametitlerulewidth=0.2mm,
+  frametitlerulecolor=myBlue,
+  frametitleaboveskip=3mm,
+  frametitlebelowskip=2mm,
+  innertopmargin=5mm,
+  innerbottommargin=4mm,
+  skipbelow=-0.5mm,
+]{sopSection}
+
+\newcommand{\drug}[2]{%
+  \begin{sopSection}[frametitle={#1}]
+    #2
+  \end{sopSection}
+}
+
+\newcommand{\notes}[1]{%
+  \begin{sopSection}[frametitle={}]
+    #1
+  \end{sopSection}
+}
