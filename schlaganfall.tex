@@ -1,0 +1,90 @@
+\documentclass{article}
+
+\usepackage{cheatsheet}
+
+\renewcommand{\sopName}{Schlaganfall}
+\renewcommand{\sopVersion}{01-JAN-2015}
+\renewcommand{\sopEditor}{(cwe)}
+
+
+\begin{document}
+\fftext%
+
+\maketitle
+
+\notes{%
+  \begin{minipage}{0.5\textwidth}
+    \begin{itemize}
+      \item \textbf{F}ace \textbf{A}rm \textbf{S}peech \textbf{T}ime
+      \item möglichst 2 iv.\ Zugänge
+      \item an Glukose denken 
+    \end{itemize}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.5\textwidth}
+    \begin{tabular}{ll}
+      \toprule
+      \textbf{RR}      & 160--220 mmHg \\
+      \textbf{BZ}      & > 80 mg\% \\
+      \textbf{Temp}    & < 37.5 {\degC} \\
+      \textbf{SpO$_2$} & > 94\% \\
+      \bottomrule
+    \end{tabular}
+  \end{minipage}
+}
+
+\vfill
+
+\drug{Vomex}{%
+  \dosierung{62.5 mg iv.}
+  \begin{minipage}[b]{0.5\textwidth}
+    \begin{kontraindikationen}
+      \item Bewusstseinsstörung
+      \item Asthma (akut/bek.)
+      \item Engwinkelglaukom
+      \item Phäochromozytom
+    \end{kontraindikationen}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.5\textwidth}
+    \begin{kontraindikationen}
+      \item Porphyrie
+      \item Prostatavergrößerung
+      \item Epilepsie
+      \item Arrythmie o. {\puls} < 60
+    \end{kontraindikationen}
+  \end{minipage}
+}
+
+\vfill
+
+\newpage
+
+\drug{Glukose}{%
+  \dosierung{2--4 g iv.}
+  \begin{kontraindikationen}
+    \item Rücklaufprobe!
+    \item nicht über 160 mg\%
+  \end{kontraindikationen}
+}
+
+\vfill
+
+\drug{Stroke Check {\arzt}}{%
+  \begin{enumerate}
+    \setlength\itemsep{1em}
+    \item Alter / {\mann} / {\frau}
+    \item FAST Symptomatik
+    \item Genaue {\uhr} des Auftretens
+    \item {\kein} Erwachen mit Symptomen
+    \item {\kein} Pflegefall vor Ereignis
+    \item Arrhythmie
+    \item Gerinnungshemmer
+    \item Vitale Funktionen (NA nötig)
+    \item Übergabeort: CCT / NA (Lyse Kandidat?)
+  \end{enumerate}
+}
+
+\vfill
+
+\end{document}
