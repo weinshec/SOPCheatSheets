@@ -1,0 +1,97 @@
+\documentclass{article}
+
+\usepackage{cheatsheet}
+
+\renewcommand{\sopName}{Analgesie}
+\renewcommand{\sopVersion}{01-JAN-2017}
+\renewcommand{\sopEditor}{(cwe)}
+
+
+\begin{document}
+\fftext%
+
+\maketitle
+
+\notes{%
+  \begin{description}
+    \item[Spastisch abdominal:] Butylscopolamin
+    \item[Bewegungsapparat:] Paracetamol + Nalbuphin
+  \end{description}
+}
+
+\vfill
+
+\drug{Butylscopolamin}{%
+  \dosierung{0.3 mg / kg KG (+ 1 Wdh.)}
+  \begin{minipage}[b]{0.5\textwidth}
+    \begin{kontraindikationen}
+      \item VAS $\le$ 5
+      \item Glaukom
+      \item \textbf{Herzrythmusströrungen}
+      \item Herzinsuffizienz
+      \item Hyperthyreose
+    \end{kontraindikationen}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.5\textwidth}
+    \begin{kontraindikationen}
+      \item (\mann) Prostatavergrößerung
+      \item (\frau) Gravida / Stillen
+      \item hereditäre \\ Fructoseintoleranz
+      \item Megacolon
+    \end{kontraindikationen}
+  \end{minipage}
+}
+
+\vfill
+
+\drug{Paracetamol}{%
+  \dosierung{15 mg / kg KG ({\kind} 11--50 kg) | 1000g ({\erw} $\ge$ 50 kg)}
+  \begin{minipage}{0.5\textwidth}
+    \begin{kontraindikationen}
+      \item VAS $\le$ 5
+      \item G6PDH-Mangel
+      \item Nieren-/Leberstörung
+      \item chron./akuter C$_2$-Abusus
+      \item Antiepileptika
+      \item Paracetamol {\uhr} < 4h
+      \item Tageshöchstdosis \\ 70 mg/kg KG
+    \end{kontraindikationen}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \begin{tabular}{cr}
+      \toprule
+      \textbf{Gewicht} & \textbf{Dosis} \\
+      \midrule
+      15 kg & 225 mg \\
+      20 kg & 300 mg \\
+      25 kg & 375 mg \\
+      30 kg & 450 mg \\
+      35 kg & 525 mg \\
+      40 kg & 600 mg \\
+      45 kg & 675 mg \\
+      50 kg & 1000 mg \\
+      \bottomrule
+    \end{tabular}
+  \end{minipage}
+}
+
+\vfill
+
+\drug{Nalbuphin}{%
+  \dosierung{0.1 mg / kg KG (+ 1 Wdh.)}
+  \begin{kontraindikationen}
+    \item VAS $\le$ 5
+    \item Nieren-/Leberstörung
+    \item chron./akuter C$_2$-Abusus
+    \item Opiatabhängigkeit
+    \item Einnahme {\uhr} < 24h \\
+      Opiaten, Antihistaminika, Antidepressiva, Sedativa
+  \end{kontraindikationen}
+}
+
+\vfill
+
+\end{document}
