@@ -5,8 +5,12 @@
 %                                                                META VARIABLES
 \newcommand{\sopName}{sopName}
 \newcommand{\sopVersion}{01--01--1970}
-\newcommand{\sopRegion}{sopRegion}
-\newcommand{\sopDisclaimer}{sopDisclaimer}
+\newcommand{\sopRegion}{Rheinhessen \& Bad Kreuznach}
+\newcommand{\sopDisclaimer}{%
+  SOP cheatsheets sind \textbf{kein offizielles Dokument des ÄLRD} und stellen
+  somit weder den Anspruch auf Vollständigkeit noch Korrektheit. Die für den
+  Rettungsdienst bindenden SOPs finden sich unter
+}
 \newcommand{\sopURL}{http://rettungsdienst-rlp.de}
 \newcommand{\sopEditor}{(xxx)}
 \newcommand{\sopContent}{content}
@@ -84,6 +88,7 @@
 \newcommand{\frau}{\faFemale}
 \newcommand{\mann}{\faMale}
 \newcommand{\erw}{\faMale\faFemale}
+\newcommand{\kind}{\faChild}
 
 \newcommand{\dosierung}[1]{\centerline{\textbf{#1}}}
 \newenvironment{kontraindikationen}
@@ -204,6 +209,8 @@
   innertopmargin=5mm,
   innerbottommargin=4mm,
   skipbelow=-0.5mm,
+  leftmargin=-2mm,
+  rightmargin=-2mm,
 ]{sopSection}
 
 \newcommand{\drug}[2]{%
