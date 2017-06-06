@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\usepackage{cheatsheet}
+
+\renewcommand{\sopName}{Anaphylaxie {\kind}}
+\renewcommand{\sopVersion}{01-APR-2014}
+\renewcommand{\sopEditor}{(cwe)}
+
+
+\begin{document}
+\fftext%
+
+\maketitle
+
+\notes{%
+  \begin{itemize}
+    \item Bei \textbf{Supra}: {\puls} beachten!
+    \item \textbf{Supra} unverdünnt vernebeln!
+    \item \textbf{Stadium IV} = Reanimation
+  \end{itemize}
+}
+
+\vfill
+
+\drug{Medikamente ({\kind} < 10 kg)}{%
+  \centering
+  \begin{tabular}{clcccc}
+                                &                    & \textbf{Dosierung} & \textbf{I} & \textbf{II} & \textbf{III} \\
+    \midrule
+                                & \textbf{Rectodelt} & 100 mg             & {\tick}    & {\tick}     & {\tick} \\[1em]
+    \multirow{2}{*}{\herz}      & \textbf{VEL}       & 15 ml/kgKG i.v.    & {}         & {\tick}     & {\tick} \\
+                                & \textbf{Supra}     & 0.5 mg/kgKG p.i.   & {}         & {}          & {\tick} \\[1em]
+    {\atmung}                   & \textbf{Supra}     & 0.5 mg/kgKG p.i.   & {}         & {\tick}     & {\tick} \\
+    \bottomrule
+  \end{tabular}
+}
+
+\vfill
+
+\end{document}
