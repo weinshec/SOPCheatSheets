@@ -9,7 +9,7 @@
 \newcommand{\sopDisclaimer}{%
   SOP cheatsheets sind \textbf{kein offizielles Dokument des ÄLRD} und stellen
   somit weder den Anspruch auf Vollständigkeit noch Korrektheit. Die für den
-  Rettungsdienst bindenden SOPs finden sich unter
+  Rettungsdienst bindenden und aktuellen SOPs finden sich unter
 }
 \newcommand{\sopURL}{http://rettungsdienst-rlp.de}
 \newcommand{\sopEditor}{(xxx)}
@@ -33,16 +33,19 @@
 %                                                                      GEOMETRY
 \usepackage[driver=none]{geometry}
 \geometry{%
-  a6paper,
-  textwidth=96mm,
-  textheight=138mm,
-  top=6mm,
-  bottom=4mm,
-  columnsep=7mm,
+  paperwidth=96mm,
+  paperheight=135mm,
+  textwidth=89mm,
+  textheight=130mm,
+  top=4mm,
+  bottom=1mm,
+  columnsep=4mm,
 }
 
+\usepackage{setspace}
+
 \setlength{\parindent}{0em}
-\setlength{\parskip}{2mm}
+\setlength{\parskip}{0mm}
 
 
 %______________________________________________________________________________
@@ -51,28 +54,25 @@
 \defaultfontfeatures{Path = fonts/}
 \usepackage{fontawesome}
 
-\newcommand{\fsNormal}{\fontsize{10pt}{12pt plus 0.125pt minus 0.125pt}}
-\newcommand{\fsSmall}{\fontsize{9pt}{11pt plus 0.125pt minus 0.125pt}}
-\renewcommand{\normalsize}{\fsNormal\selectfont}
-\renewcommand{\small}{\fsSmall\selectfont}
-
-\newfontfamily{\fftext}[
+\setmainfont{SourceSansPro}[
   Mapping=tex-text,
   UprightFont={SourceSansPro-Light},
   ItalicFont={SourceSansPro-LightItalic},
   BoldFont={SourceSansPro-Semibold},
   BoldItalicFont={SourceSansPro-SemiboldItalic}
-]{SourceSansPro}
-\newfontfamily{\ffextra}[
-  Mapping=tex-text
-]{SourceSansPro-Regular}
-\newfontfamily{\fffancy}[
-  Mapping=tex-text,
-  UprightFont={SourceSansPro-Black},
-  ItalicFont={SourceSansPro-BlackItalic},
-  BoldFont={SourceSansPro-Black},
-  BoldItalicFont={SourceSansPro-BlackItalic}
-]{SourceSansPro}
+]
+
+\newcommand{\fHead}[2]{%
+  {\fontsize{#1}{#1}\selectfont\addfontfeature{LetterSpace=-2.0}\textbf{#2}}
+}
+\newcommand{\fTitle}[2]{%
+  {\fontsize{#1}{#1}\selectfont\color{myBlue}#2}
+}
+
+\newcommand{\fsNormal}{\fontsize{10pt}{12pt plus 0.125pt minus 0.125pt}}
+\newcommand{\fsSmall}{\fontsize{9pt}{11pt plus 0.125pt minus 0.125pt}}
+\renewcommand{\normalsize}{\fsNormal\selectfont}
+\renewcommand{\small}{\fsSmall\selectfont}
 
 
 %______________________________________________________________________________
@@ -97,48 +97,19 @@
 \newcommand{\herz}{\faHeartO}
 \newcommand{\atmung}{\faMixcloud}
 \newcommand{\wdh}{\faRepeat}
+\newcommand{\ki}{\faSignIn}
 
 \newcommand{\degC}{$^{\circ}$C}
 
 \newcommand{\dosierung}[1]{\centerline{\textbf{#1}}}
 \newenvironment{kontraindikationen}
-  {\begin{itemize}\renewcommand{\labelitemi}{\faSignIn}}{\end{itemize}}
+  {\begin{itemize}\renewcommand{\labelitemi}{\ki}}
+  {\end{itemize}}
 
 
 % --- tables -----------------------------------------------------------
 \usepackage{booktabs}
 \usepackage{multirow}
-%\usepackage{tabularx}
-%\usepackage{colortbl}
-%\usepackage{ragged2e}
-%\usepackage{multirow}
-
-%\renewcommand{\tabcolsep}{1mm}
-
-%\newcolumntype{x}[1]{%
-%>{\raggedright\hspace{0pt}}p{#1}%
-%}
-%\newcolumntype{y}[1]{%
-%>{\centering\hspace{0pt}}p{#1}%
-%}
-%\newcolumntype{z}[1]{%
-%>{\raggedleft\hspace{0pt}}p{#1}%
-%}
-
-%\newcommand{\thead}[1]{\textup{\color{white}#1}}
-%\newcommand{\tn}{\tabularnewline}
-
-%\newcommand{\tabelle}[4][\ffextra\small]{\renewcommand{\arraystretch}{0.95}{
-%{#1%
-%\vspace{2pt plus 6pt}%
-%\noindent%
-%\rowcolors[]{1}{secondary}{}%
-%\RaggedRight\setlength{\extrarowheight}{0.15\baselineskip}%
-%\begin{tabularx}{\columnwidth}{#2}
-%\rowcolor{primary}
-%#3
-%#4
-%\end{tabularx}\vspace{2pt plus 6pt}}}}
 
 
 %______________________________________________________________________________
@@ -147,81 +118,81 @@
 \AddToShipoutPicture{\background}
 
 \renewcommand{\background}{%
-  \begin{tikzpicture}
+  \begin{tikzpicture}[
+    remember picture,
+    overlay,
+    every node/.style={color=white, align=center},
+    title/.style={minimum width=\paperwidth, fill=white}
+  ]
+    % background color
     \fill[myGrey] (0,0) rectangle (\paperwidth,\paperheight);
+
+    % Draw header on first page
     \ifnum\thepage=1\relax
+
       \fill[myBlue]
-        (\paperwidth,\paperheight) rectangle ++(-\paperwidth,-40mm);
+        (\paperwidth,\paperheight) rectangle ++(-\paperwidth,-38mm);
+
+      \node[anchor=north] at (0.27\paperwidth,\paperheight-1mm) {%
+          \fHead{42pt}{SOP}\\
+          \fHead{27pt}{CHEAT}\\
+          \fHead{27pt}{SHEET}\\
+          \textbf{\sopRegion}\\[2mm]
+          \parbox[b]{10mm}{\fontsize{7pt}{7pt}\selectfont\raggedleft{version}}
+          \parbox[b]{20mm}{\fontsize{11pt}{11pt}\selectfont\sopVersion}
+          \parbox[b]{10mm}{\fontsize{7pt}{7pt}\selectfont\sopEditor}
+      };
+
+      \node[anchor=north] at (0.75\paperwidth,\paperheight-1mm) {%
+        Disclaimer\\[2mm]
+        \parbox{0.42\paperwidth}{%
+          \setstretch{1.5}\fontsize{7pt}{7pt}\selectfont
+          \textit{\sopDisclaimer}
+        }\\[3mm]
+        \sopURL
+      };
+
+      \node[title, anchor=north] (title) at (0.5\paperwidth, \paperheight-38mm) {%
+        \fTitle{20pt}{\sopName}
+      };
+      \draw[color=myBlue, ultra thick] (title.south west)--(title.south east);
+
+    % Draw headline on 2+ pages
     \else
       \fill[myBlue]
-        (\paperwidth,\paperheight) rectangle ++(-\paperwidth,-2mm);
+        (\paperwidth,\paperheight) rectangle ++(-\paperwidth,-1mm);
     \fi
+
+    % Footline
     \fill[myBlue]
-      (0,0) rectangle ++(\paperwidth,2mm);
+      (0,0) rectangle ++(\paperwidth,1mm);
+
   \end{tikzpicture}
 }
 
 
 %______________________________________________________________________________
 %                                                                     STRUCTURE
-\renewcommand{\maketitle}{%
-  \begin{multicols}{2}
-    \raggedbottom\color{white}
-    \noindent
-    \parbox[c][30mm][c]{\columnwidth}{%
-      \centerline{\fffancy\fontsize{42pt}{42pt}\selectfont\color{white}{%
-        \addfontfeature{LetterSpace=-2.0}SOP}
-      }
-      \centerline{\fffancy\fontsize{27pt}{27pt}\selectfont\color{white}{%
-        \addfontfeature{LetterSpace=-2.0}CHEAT}
-      }
-      \centerline{\fffancy\fontsize{27pt}{27pt}\selectfont\color{white}{%
-        \addfontfeature{LetterSpace=-2.0}SHEET}
-      }
-      \vspace*{1mm}
-      \centerline{\textbf{\sopRegion}}
-      \vspace*{1mm}
-      \centerline{%
-        \parbox[b]{10mm}{\fontsize{7pt}{7pt}\selectfont\raggedleft{version}}
-        \parbox[b]{25mm}{\fontsize{11pt}{11pt}\selectfont\sopVersion}
-      }
-    }
 
-    \noindent
-    \parbox[c][30mm][c]{\columnwidth}{%
-      \noindent\textit{\fontsize{8pt}{8pt}\selectfont\sopDisclaimer}
-      \vspace*{2mm}
-
-      \centerline{\sopURL}
-    }
-    \raggedleft{\tiny\sopEditor}
-  \end{multicols}
-  \vspace*{-0.7em}
-  \centerline{%
-    \begin{tikzpicture}%
-      \node[minimum height=1.25cm, minimum width=\paperwidth, fill=white] (s)
-        {\fontsize{24pt}{24pt}\selectfont\color{myBlue} \sopName};
-      \draw [color=myBlue, ultra thick] (s.south west)--(s.south east);
-      \draw [color=myBlue, ultra thick] (s.north west)--(s.north east);
-    \end{tikzpicture}
-  }
-}
+\newcommand{\sopHeadSkip}{\vspace*{39mm}}
 
 \usepackage[framemethod=tikz]{mdframed}
 \newmdenv[
   backgroundcolor=white,
   roundcorner=4pt,
-  frametitlefont=\fftext\fontsize{16pt}{16pt}\selectfont\color{myBlue},
+  frametitlefont=\fontsize{15pt}{15pt}\selectfont\color{myBlue},
   frametitlerule=true,
-  frametitlerulewidth=0.2mm,
+  frametitlerulewidth=0.3mm,
   frametitlerulecolor=myBlue,
-  frametitleaboveskip=3mm,
-  frametitlebelowskip=2mm,
-  innertopmargin=5mm,
-  innerbottommargin=4mm,
+  frametitleaboveskip=2mm,
+  frametitlebelowskip=1mm,
+  innertopmargin=3mm,
+  innerbottommargin=3mm,
   skipbelow=-0.5mm,
   leftmargin=-2mm,
   rightmargin=-2mm,
+  innerleftmargin=4mm,
+  innerrightmargin=4mm,
 ]{sopSection}
 
 \newcommand{\drug}[2]{%
