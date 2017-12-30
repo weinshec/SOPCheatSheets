@@ -15,19 +15,28 @@
 \newcommand{\sopEditor}{(xxx)}
 \newcommand{\sopContent}{content}
 
-
 %______________________________________________________________________________
 %                                                                        BASICS
 \usepackage[cmyk]{xcolor}
 \usepackage{eso-pic}   % AddToShipoutPicture support
 \usepackage{multicol}  % 2-columns
-
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\sisetup{%
+  detect-all = true,
+  range-phrase = --,
+  range-units = single,
+}
+\DeclareSIUnit\kgKG{{\kilo\gram}KG}
+\DeclareSIUnit\hub{Hub}
+\DeclareSIUnit\mmHG{{\milli\meter}HG}
+\DeclareSIUnit\IE{I.E.}
 
 %______________________________________________________________________________
 %                                                                        COLORS
 \DefineNamedColor{named}{myBlue}{RGB}{32,109,252}
 \DefineNamedColor{named}{myGrey}{RGB}{35, 33, 30}
-
 
 %______________________________________________________________________________
 %                                                                      GEOMETRY
@@ -39,6 +48,8 @@
   textheight=130mm,
   top=4mm,
   bottom=1mm,
+  left=3.5mm,
+  right=3.5mm,
   columnsep=4mm,
 }
 
@@ -46,7 +57,7 @@
 
 \setlength{\parindent}{0em}
 \setlength{\parskip}{0mm}
-
+\setlength{\leftmargini}{6mm}
 
 %______________________________________________________________________________
 %                                                                         FONTS
@@ -69,8 +80,8 @@
   {\fontsize{#1}{#1}\selectfont\color{myBlue}#2}
 }
 
-\newcommand{\fsNormal}{\fontsize{10pt}{12pt plus 0.125pt minus 0.125pt}}
-\newcommand{\fsSmall}{\fontsize{9pt}{11pt plus 0.125pt minus 0.125pt}}
+\newcommand{\fsNormal}{\fontsize{9pt}{12pt plus 0.125pt minus 0.125pt}}
+\newcommand{\fsSmall}{\fontsize{8pt}{11pt plus 0.125pt minus 0.125pt}}
 \renewcommand{\normalsize}{\fsNormal\selectfont}
 \renewcommand{\small}{\fsSmall\selectfont}
 
@@ -90,7 +101,7 @@
 \newcommand{\erw}{\faMale\faFemale}
 \newcommand{\kind}{\faChild}
 \newcommand{\uhr}{\faClockO}
-\newcommand{\zeit}{\faHourglassEnd}
+\newcommand{\zeit}{\small\faHourglassStart}
 \newcommand{\kein}{\faBan}
 \newcommand{\arzt}{\faUserMd}
 \newcommand{\tick}{\faCheck}
@@ -98,18 +109,8 @@
 \newcommand{\atmung}{\faMixcloud}
 \newcommand{\wdh}{\faRepeat}
 \newcommand{\ki}{\faSignIn}
-
-\newcommand{\degC}{$^{\circ}$C}
-
-\newcommand{\dosierung}[1]{\centerline{\textbf{#1}}}
-\newenvironment{kontraindikationen}
-  {\begin{itemize}\renewcommand{\labelitemi}{\ki}}
-  {\end{itemize}}
-
-
-% --- tables -----------------------------------------------------------
-\usepackage{booktabs}
-\usepackage{multirow}
+\newcommand{\Ox}{O$_2$}
+\newcommand{\SpOx}{Sp\Ox}
 
 
 %______________________________________________________________________________
@@ -152,7 +153,7 @@
         \sopURL
       };
 
-      \node[title, anchor=north] (title) at (0.5\paperwidth, \paperheight-38mm) {%
+      \node[title, anchor=north, minimum height=10mm] (title) at (0.5\paperwidth, \paperheight-38mm) {%
         \fTitle{20pt}{\sopName}
       };
       \draw[color=myBlue, ultra thick] (title.south west)--(title.south east);
@@ -170,29 +171,29 @@
   \end{tikzpicture}
 }
 
-
 %______________________________________________________________________________
 %                                                                     STRUCTURE
 
-\newcommand{\sopHeadSkip}{\vspace*{39mm}}
+\newcommand{\sopHeadSkip}{\vspace*{41mm}}
 
 \usepackage[framemethod=tikz]{mdframed}
 \newmdenv[
   backgroundcolor=white,
   roundcorner=4pt,
-  frametitlefont=\fontsize{15pt}{15pt}\selectfont\color{myBlue},
+  frametitlefont=\Large\color{myBlue}\strut,
   frametitlerule=true,
   frametitlerulewidth=0.3mm,
   frametitlerulecolor=myBlue,
   frametitleaboveskip=2mm,
-  frametitlebelowskip=1mm,
+  frametitlebelowskip=0.5mm,
   innertopmargin=3mm,
   innerbottommargin=3mm,
-  skipbelow=-0.5mm,
+  skipabove=1mm,
+  skipbelow=0mm,
   leftmargin=-2mm,
   rightmargin=-2mm,
-  innerleftmargin=4mm,
-  innerrightmargin=4mm,
+  innerleftmargin=3mm,
+  innerrightmargin=3mm,
 ]{sopSection}
 
 \newcommand{\drug}[2]{%
@@ -206,3 +207,14 @@
     #1
   \end{sopSection}
 }
+
+\newcommand{\dosierung}[1]{%
+  \begin{center}
+    \textbf{#1}
+  \end{center}
+  \vspace{-2mm}
+}
+
+\newenvironment{kontraindikationen}
+  {\begin{itemize}\renewcommand{\labelitemi}{\ki}}
+  {\end{itemize}}

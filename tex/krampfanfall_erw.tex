@@ -8,32 +8,48 @@
 
 
 \begin{document}
-\fftext%
-
-\maketitle
+\sopHeadSkip%
 
 \notes{%
   \begin{itemize}
-    \item MAD:\@ Immer nur 1ml aufziehen (mit Druck applizieren)
-    \item Physikal.\ Kühlung bei T > 39{\degC}
+    \item \textbf{MAD:} Immer nur \SI{5}{\milli\gram} (\SI{1}{\milli\liter})
+      aufziehen (mit Druck applizieren)
+    \item Physikalische\ Kühlung bei T > \SI{39}{\celsius}
   \end{itemize}
 }
 
 \vfill
 
-\drug{Midazolam 15mg/3ml MAD}{%
-  \dosierung{5 mg + {\wdh} 5 mg + {\wdh} 5 mg}
-  \begin{kontraindikationen}
-    \item C$_2$-Intoxikation
-    \item Medikamenten-Intoxikation
-    \item Myasthenia Gravis
-  \end{kontraindikationen}
+\drug{Dormicum {\small(Midazolam)} \SI{15}{\milli\gram}/\SI{3}{\milli\liter}}{%
+  \dosierung{%
+    \SI{5}{\milli\gram}
+    + {\wdh} \SI{5}{\milli\gram}
+    + {\wdh} \SI{5}{\milli\gram}
+  }
+  \vspace{4mm}
+  \begin{minipage}[t]{0.5\textwidth}
+    \begin{kontraindikationen}
+      \item C$_2$-Intoxikation
+      \item Medikamenten-Intoxikation
+      \item Myasthenia Gravis
+    \end{kontraindikationen}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.5\textwidth}
+    \begin{kontraindikationen}
+      \item Nach-Schlaf-Phase
+      \item Krampf beendet
+    \end{kontraindikationen}
+  \end{minipage}
 }
 
 \vfill
 
-\drug{Glukose 40\%}{%
-  \dosierung{8g i.v. + 8g Infusion}
+\drug{Glukose \SI{40}{\percent}}{%
+  \dosierung{\SI{8}{\gram} i.v. + \SI{8}{\gram} Infusion}
+  \begin{kontraindikationen}
+    \item \textbf{Rücklaufprobe!}
+  \end{kontraindikationen}
 }
 
 \vfill

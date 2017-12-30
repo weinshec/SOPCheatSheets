@@ -8,9 +8,7 @@
 
 
 \begin{document}
-\fftext%
-
-\maketitle
+\sopHeadSkip%
 
 \notes{%
   \begin{minipage}[t]{0.6\textwidth}
@@ -28,16 +26,20 @@
 
 \vfill
 
-\drug{Nitrolingual}{%
-  \dosierung{1 Hub (\wdh{1} | 3--5 min.)}
-  \begin{minipage}{0.5\textwidth}
+\drug{Nitrolingual {\small(Glyceroltrinitrat)}}{%
+  \dosierung{%
+    \SI{1}{\hub} (\wdh{1} | \SIrange{3}{5}{\minute})
+  }
+  \vspace{4mm}
+  \begin{minipage}[t]{0.55\textwidth}
     \begin{kontraindikationen}
-      \item \textbf{RR} < 110 mmHg
-      \item Einnahme PDE-5-Hemmer (Viagra < 24h | Cialis < 36h)
+      \item \textbf{RR} < \SI{110}{\mmHg}
+      \item Einnahme PDE-5-Hemmer \\
+        (Viagra {\zeit} < \SI{24}{\hour} | Cialis {\zeit} < \SI{36}{\hour})
     \end{kontraindikationen}
   \end{minipage}
   \hfill
-  \begin{minipage}{0.5\textwidth}
+  \begin{minipage}[t]{0.45\textwidth}
     \begin{kontraindikationen}
       \item diag.\ re.\herz-infarkt
       \item bek.\ re.\herz-belastung \\ bei COPD
@@ -47,24 +49,25 @@
 
 \vfill
 
-\drug{Lasix}{%
-  \dosierung{40 mg i.v.}
-  \begin{minipage}{0.5\textwidth}
+\drug{Lasix {\small(Furosemid)}}{%
+  \dosierung{%
+    \SI{40}{\milli\gram} i.v.
+  }
+  \vspace{4mm}
+  \begin{minipage}[t]{0.5\textwidth}
     \begin{kontraindikationen}
-      \item \textbf{RR} < 110 mmHg
+      \item \textbf{RR} < \SI{110}{\mmHg}
     \end{kontraindikationen}
   \end{minipage}
   \hfill
-  \begin{minipage}{0.5\textwidth}
+  \begin{minipage}[t]{0.5\textwidth}
     \begin{kontraindikationen}
       \item Hypokaliämie
     \end{kontraindikationen}
   \end{minipage}
-  \vspace{-2.0em}
   \begin{kontraindikationen}
     \item Blasenentleerungsstörung (ohne Katheter)
   \end{kontraindikationen}
-  \vspace{-1.0em}
 }
 
 \vfill

@@ -8,28 +8,35 @@
 
 
 \begin{document}
-\fftext%
-
-\maketitle
+\sopHeadSkip%
 
 \notes{%
   \begin{itemize}
-    \item isolierte Hypoglykämie BZ < 70mg\%
+    \item isolierte Hypoglykämie BZ < \SI{70}{\milli\gram\percent}
     \item \textbf{Sicherer i.v. Zugang, Rücklaufprobe!}
-    \item (persönl.) Übergabe an HA, ÄBP, Klinik
+    \item (persönl.) Übergabe an Hausarzt, ÄBP, Klinik
+    \item Glukose langsam applizieren
   \end{itemize}
 }
 
 \vfill
 
-\drug{{\erw}: Glukose 40\%}{%
-  \dosierung{8g i.v. + 8g Infusion (\wdh{} 8g i.v.)}
+\drug{{\erw}: Glukose \SI{40}{\percent}}{%
+  \dosierung{%
+    \SI{8}{\gram} i.v. + \SI{8}{\gram} Infusion (\wdh{} \SI{8}{\gram} i.v.)
+  }
+  \vspace{2mm}
 }
 
-\drug{{\kind}: Glukose 40\% + 100 ml NaCl}{%
-  \dosierung{0.2 g/kgKG i.v. + 0.2 g/kgKG Infusion (\wdh{} 0.2 g/kgKG i.v.)}
+\vfill
+
+\drug{{\kind}: Glukose \SI{40}{\percent} + \SI{100}{\milli\liter} NaCl}{%
+  \dosierung{%
+    \SI{0.2}{\gram\per\kgKG} i.v. + \SI{0.2}{\gram\per\kgKG} Infusion
+    (\wdh{} \SI{0.2}{\gram\per\kgKG} i.v.)
+  }
   \begin{itemize}
-    \item 0.2 g/kgKG $\equiv$ 0.5 ml/kgKG
+    \item \SI{0.2}{\gram\per\kgKG} $\equiv$ \SI{0.5}{\milli\liter\per\kgKG}
     \item Glukose i.v. 1:1 mit NaCl verdünnen!
   \end{itemize}
 }

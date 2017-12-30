@@ -8,26 +8,26 @@
 
 
 \begin{document}
-\fftext%
-
-\maketitle
+\sopHeadSkip%
 
 \notes{%
   \begin{minipage}{0.5\textwidth}
     \begin{itemize}
       \item \textbf{F}ace \textbf{A}rm \textbf{S}peech \textbf{T}ime
-      \item möglichst 2 iv.\ Zugänge
-      \item an Glukose denken 
+      \item möglichst 2 i.v.\ Zugänge
+      \item an Glukose denken!
     \end{itemize}
   \end{minipage}
   \hfill
   \begin{minipage}{0.5\textwidth}
+    \centering
+    \textbf{Zielwerte}
     \begin{tabular}{ll}
       \toprule
-      \textbf{RR}      & 160--220 mmHg \\
-      \textbf{BZ}      & > 80 mg\% \\
-      \textbf{Temp}    & < 37.5 {\degC} \\
-      \textbf{SpO$_2$} & > 94\% \\
+      \textbf{RR}      & \SIrange{160}{220}{\mmHg} \\
+      \textbf{BZ}      & > \SI{80}{\milli\gram\percent} \\
+      \textbf{Temp}    & < \SI{37.5}{\celsius} \\
+      \textbf{SpO$_2$} & > \SI{94}{\percent} \\
       \bottomrule
     \end{tabular}
   \end{minipage}
@@ -35,8 +35,11 @@
 
 \vfill
 
-\drug{Vomex}{%
-  \dosierung{62.5 mg iv.}
+\drug{Vomex {\small(Dimenhydrinat)}}{%
+  \dosierung{%
+    \SI{62.5}{\milli\gram} i.v.
+  }
+  \vspace{4mm}
   \begin{minipage}[b]{0.5\textwidth}
     \begin{kontraindikationen}
       \item Bewusstseinsstörung
@@ -51,7 +54,7 @@
       \item Porphyrie
       \item Prostatavergrößerung
       \item Epilepsie
-      \item Arrythmie o. {\puls} < 60
+      \item Arrythmie o. {\puls} < \SI{60}{\per\minute}
     \end{kontraindikationen}
   \end{minipage}
 }
@@ -60,11 +63,12 @@
 
 \newpage
 
-\drug{Glukose}{%
-  \dosierung{2--4 g iv.}
+\drug{Glukose \SI{40}{\percent}}{%
+  \dosierung{%
+    \SIrange{2}{4}{\gram} i.v.}
   \begin{kontraindikationen}
-    \item Rücklaufprobe!
-    \item nicht über 160 mg\%
+    \item \textbf{Rücklaufprobe!}
+    \item nicht über \SI{160}{\milli\gram\percent}
   \end{kontraindikationen}
 }
 

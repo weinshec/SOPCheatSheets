@@ -3,39 +3,42 @@
 \usepackage{cheatsheet}
 
 \renewcommand{\sopName}{Analgesie}
-\renewcommand{\sopVersion}{01-JAN-2017}
+\renewcommand{\sopVersion}{16-FEB-2017}
 \renewcommand{\sopEditor}{(cwe)}
 
 
 \begin{document}
-\fftext%
-
-\maketitle
+\sopHeadSkip%
 
 \notes{%
   \begin{description}
-    \item[Spastisch abdominal:] Butylscopolamin
-    \item[Bewegungsapparat:] Paracetamol + Nalbuphin
+    \item[Spastisch abdominal:] Gallenkolik, Nierenkolik \\
+      {\color{myBlue}$\rightarrow$ \textbf{Buscopan}}
+    \item[Bewegungsapparat:] Distorsion, Luxation, Fraktur, Rückenschmerz, Weichteilverletzung, Verbrennung \\
+      {\color{myBlue}$\rightarrow$ \textbf{Perfalgan + Nalpain}}
   \end{description}
 }
 
 \vfill
 
-\drug{Butylscopolamin}{%
-  \dosierung{0.3 mg / kg KG (\wdh{1})}
-  \begin{minipage}[b]{0.5\textwidth}
+\drug{Buscopan {\small(Butylscopolamin)}}{%
+  \dosierung{%
+    \SI{0.3}{\milli\gram\per\kgKG} (\wdh{1} | \SI{5}{\minute}) (langsam!)
+  }
+  \vspace{4mm}
+  \begin{minipage}[t]{0.5\textwidth}
     \begin{kontraindikationen}
       \item VAS $\le$ 5
       \item Glaukom
-      \item \textbf{Herzrythmusströrungen}
+      \item \textbf{Herzrythmusströrung}
       \item Herzinsuffizienz
       \item Hyperthyreose
     \end{kontraindikationen}
   \end{minipage}
   \hfill
-  \begin{minipage}[b]{0.5\textwidth}
+  \begin{minipage}[t]{0.5\textwidth}
     \begin{kontraindikationen}
-      \item (\mann) Prostatavergrößerung
+      \item (\mann) Prostatahyperplasie
       \item (\frau) Gravida / Stillen
       \item hereditäre \\ Fructoseintoleranz
       \item Megacolon
@@ -45,34 +48,39 @@
 
 \vfill
 
-\drug{Paracetamol}{%
-  \dosierung{15 mg / kg KG ({\kind} 11--50 kg) | 1000g ({\erw} $\ge$ 50 kg)}
-  \begin{minipage}{0.5\textwidth}
+\drug{Perfalgan {\small(Paracetamol)}}{%
+  \dosierung{%
+    \SI{1000}{\milli\gram} ({\erw} $\ge$\SI{50}{\kilo\gram})
+    |
+    \SI{15}{\milli\gram\per\kgKG} ({\kind} \SIrange{11}{50}{\kilo\gram})
+  }
+  \vspace{4mm}
+  \begin{minipage}{0.6\textwidth}
     \begin{kontraindikationen}
       \item VAS $\le$ 5
       \item G6PDH-Mangel
       \item Nieren-/Leberstörung
       \item chron./akuter C$_2$-Abusus
       \item Antiepileptika
-      \item Paracetamol {\uhr} < 4h
-      \item Tageshöchstdosis \\ 70 mg/kg KG
+      \item Paracetamol {\zeit} < \SI{4}{\hour}
+      \item Tageshöchstdosis (\SI{70}{\milli\gram\per\kgKG})
     \end{kontraindikationen}
   \end{minipage}
   \hfill
-  \begin{minipage}{0.5\textwidth}
+  \begin{minipage}{0.4\textwidth}
     \centering
-    \begin{tabular}{cr}
+    \begin{tabular}{rr}
       \toprule
       \textbf{Gewicht} & \textbf{Dosis} \\
       \midrule
-      15 kg & 225 mg \\
-      20 kg & 300 mg \\
-      25 kg & 375 mg \\
-      30 kg & 450 mg \\
-      35 kg & 525 mg \\
-      40 kg & 600 mg \\
-      45 kg & 675 mg \\
-      50 kg & 1000 mg \\
+      \SI{15}{\kilo\gram} & \SI{225}{\milli\gram} \\
+      \SI{20}{\kilo\gram} & \SI{300}{\milli\gram} \\
+      \SI{25}{\kilo\gram} & \SI{375}{\milli\gram} \\
+      \SI{30}{\kilo\gram} & \SI{450}{\milli\gram} \\
+      \SI{35}{\kilo\gram} & \SI{525}{\milli\gram} \\
+      \SI{40}{\kilo\gram} & \SI{600}{\milli\gram} \\
+      \SI{45}{\kilo\gram} & \SI{675}{\milli\gram} \\
+      $\ge$\SI{50}{\kilo\gram} & \SI{1000}{\milli\gram} \\
       \bottomrule
     \end{tabular}
   \end{minipage}
@@ -80,14 +88,16 @@
 
 \vfill
 
-\drug{Nalbuphin}{%
-  \dosierung{0.1 mg / kg KG (\wdh{1})}
+\drug{Nalpain {\small(Nalbuphin)}}{%
+  \dosierung{%
+    \SI{0.1}{\milli\gram\per\kgKG} (\wdh{1} | \SI{5}{\minute}) (langsam!)
+  }
   \begin{kontraindikationen}
     \item VAS $\le$ 5
     \item Nieren-/Leberstörung
     \item chron./akuter C$_2$-Abusus
     \item Opiatabhängigkeit
-    \item Einnahme {\uhr} < 24h \\
+    \item Einnahme {\zeit} < \SI{24}{\hour} \\
       Opiaten, Antihistaminika, Antidepressiva, Sedativa
   \end{kontraindikationen}
 }

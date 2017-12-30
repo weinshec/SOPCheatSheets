@@ -8,33 +8,34 @@
 
 
 \begin{document}
-\fftext%
+\sopHeadSkip%
 
-\maketitle
-
-%\notes{%
-  %\begin{itemize}
-    %\item Atemhilfsmuskulatur / Lippenbremse nicht vergessen!
-  %\end{itemize}
-%}
+\notes{%
+  \begin{itemize}
+    \item Atemhilfsmuskulatur / Lippenbremse nicht vergessen!
+  \end{itemize}
+}
 
 \vfill
 
 \drug{Salbutamol + Atrovent}{%
-  \dosierung{1.25 mg + 0.250 mg}
+  \dosierung{%
+    \SI{1.25}{\milli\gram} + \SI{250}{\micro\gram}
+  }
   \begin{kontraindikationen}
-    \item kreislaufwirksame Tachykardien \puls{140}
     \item {\kind} < 2 Jahre
+    \item kreislaufwirksame Tachykardien {\puls} \SI{140}{\per\minute}
     \item Unverträglichkeit / Allergie
   \end{kontraindikationen}
 }
 
 \vfill
 
-\drug{SDH / Methylprednisolon}{%
-  \dosierung{3 mg / kg KG (max. 100 mg)}
+\drug{SDH {\small(Methylprednisolon)}}{%
+  \dosierung{%
+    \SI{3}{\milli\gram\per\kgKG} (max. \SI{100}{\milli\gram})}
   \begin{kontraindikationen}
-    \item {\kind} < 10 kg
+    \item {\kind} < \SI{10}{\kilo\gram}
     \item Unverträglichkeit / Allergie
   \end{kontraindikationen}
 }

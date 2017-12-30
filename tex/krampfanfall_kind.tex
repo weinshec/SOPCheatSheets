@@ -8,32 +8,42 @@
 
 
 \begin{document}
-\fftext%
-
-\maketitle
+\sopHeadSkip%
 
 \notes{%
   \begin{itemize}
-    \item Physikal.\ Kühlung bei T > 38.5{\degC} (Wadenwickel,\ldots)
-    \item Bei Fieberkrampf: Paracetamol d. Mutter (40mg/kgKG)
+    \item Physikalische Kühlung bei T > \SI{38.5}{\celsius}
+      (Wadenwickel, \ldots)
+    \item Bei Fieberkrampf: Paracetamol durch Eltern
+      (\SI{40}{\milli\gram\per\kgKG})
   \end{itemize}
 }
 
 \vfill
 
 \drug{Diazepam Rectiole}{%
-  \dosierung{5--15kg\kind:\@ 5mg (+ {\wdh} 1)}
-  \dosierung{>15kg\kind:\@ 10mg}
+  \begin{center}
+    \bfseries%
+    \begin{tabular}{crrl}
+      {\kind} & \SIrange{5}{15}{\kilo\gram} & \SI{5}{\milli\gram} & (+ {\wdh} 1) \\
+      {\kind} & >\SI{15}{\kilo\gram} & \SI{10}{\milli\gram} &
+    \end{tabular}
+  \end{center}
   \begin{kontraindikationen}
-    \item {\kind} < 6 Monate oder 5 kg
+    \item {\kind} < 6 Monate oder \SI{5}{\kilo\gram}
     \item Myasthenia Gravis
   \end{kontraindikationen}
 }
 
 \vfill
 
-\drug{Glukose 40\%}{%
-  \dosierung{0.2 g/kgKG i.v. + 0.2 g/kgKG Infusion}
+\drug{Glukose \SI{40}{\percent}}{%
+  \dosierung{%
+    \SI{0.2}{\gram\per\kgKG} i.v. + \SI{0.2}{\gram\per\kgKG} Infusion
+  }
+  \begin{itemize}
+    \item Glukose i.v. 1:1 mit NaCl verdünnen!
+  \end{itemize}
 }
 
 \vfill

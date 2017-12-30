@@ -16,7 +16,7 @@ erstellten SOPs mit Versions-Datum findet sich in folgender Tabelle
 | SOP Name               | Datum        |
 | ---------------------- | ------------ |
 | ACS                    | 02-OCT-2016  |
-| Analgesie              | 01-JAN-2017  |
+| Analgesie              | 16-FEB-2017  |
 | Anaphylaxie Erw.       | 01-APR-2014  |
 | Anaphylaxie Kind       | 01-APR-2014  |
 | Atemwegsstenose Kind   | 01-JAN-2014  |
