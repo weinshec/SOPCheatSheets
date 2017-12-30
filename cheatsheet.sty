@@ -62,16 +62,21 @@
 %______________________________________________________________________________
 %                                                                         FONTS
 \usepackage{fontspec}
-\defaultfontfeatures{Path = fonts/}
-\usepackage{fontawesome}
 
-\setmainfont{SourceSansPro}[
-  Mapping=tex-text,
-  UprightFont={SourceSansPro-Light},
-  ItalicFont={SourceSansPro-LightItalic},
-  BoldFont={SourceSansPro-Semibold},
-  BoldItalicFont={SourceSansPro-SemiboldItalic}
-]
+\setmainfont[%
+  Path           = fonts/,
+  Extension      = .ttf,
+  UprightFont    = *-Light,
+  ItalicFont     = *-LightItalic,
+  BoldFont       = *-Semibold,
+  BoldItalicFont = *-SemiboldItalic,
+  Mapping        = tex-text,
+]{SourceSansPro}
+
+\newfontfamily{\fa}[%
+  Path      = fonts/,
+  Extension = .otf,
+]{FontAwesome}
 
 \newcommand{\fHead}[2]{%
   {\fontsize{#1}{#1}\selectfont\addfontfeature{LetterSpace=-2.0}\textbf{#2}}
@@ -95,20 +100,20 @@
 
 %______________________________________________________________________________
 %                                                                  COMMON ITEMS
-\newcommand{\puls}{\faHeartbeat{} }
-\newcommand{\frau}{\faFemale}
-\newcommand{\mann}{\faMale}
-\newcommand{\erw}{\faMale\faFemale}
-\newcommand{\kind}{\faChild}
-\newcommand{\uhr}{\faClockO}
-\newcommand{\zeit}{\small\faHourglassStart}
-\newcommand{\kein}{\faBan}
-\newcommand{\arzt}{\faUserMd}
-\newcommand{\tick}{\faCheck}
-\newcommand{\herz}{\faHeartO}
-\newcommand{\atmung}{\faMixcloud}
-\newcommand{\wdh}{\faRepeat}
-\newcommand{\ki}{\faSignIn}
+\newcommand{\puls}{{\fa\char"F21E}}
+\newcommand{\frau}{{\fa\char"F182}}
+\newcommand{\mann}{{\fa\char"F183}}
+\newcommand{\kind}{{\fa\char"F1AE}}
+\newcommand{\uhr }{{\fa\char"F017}}
+\newcommand{\kein}{{\fa\char"F05E}}
+\newcommand{\arzt}{{\fa\char"F0F0}}
+\newcommand{\tick}{{\fa\char"F00C}}
+\newcommand{\herz}{{\fa\char"F08A}}
+\newcommand{\resp}{{\fa\char"F289}}
+\newcommand{\wdh }{{\fa\char"F01E}}
+\newcommand{\ki  }{{\fa\char"F090}}
+\newcommand{\erw }{\mann\frau}
+\newcommand{\zeit}{\uhr}
 \newcommand{\Ox}{O$_2$}
 \newcommand{\SpOx}{Sp\Ox}
 
