@@ -31,7 +31,7 @@ erstellten SOPs mit Versions-Datum findet sich in folgender Tabelle
 
 ## Disclaimer
 
-  SOP cheatsheets sind \textbf{kein offizielles Dokument des ÄLRD} und stellen
-  somit weder den Anspruch auf Vollständigkeit noch Korrektheit. Die für den
-  Rettungsdienst bindenden SOPs finden sich unter http://rettungsdienst-rlp.de
+SOP cheatsheets sind **kein offizielles Dokument des ÄLRD** und stellen
+somit weder den Anspruch auf Vollständigkeit noch Korrektheit. Die für den
+Rettungsdienst bindenden SOPs finden sich unter http://rettungsdienst-rlp.de
 
