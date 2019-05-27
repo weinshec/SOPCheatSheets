@@ -1,0 +1,47 @@
+\documentclass{article}
+
+\usepackage{cheatsheet}
+\usepackage[german]{babel}
+
+\begin{document}
+\noindent
+\begin{card}
+  \cardtitle{Hypoglykämie}{\small\erw\footnotesize\kind}
+  \cardmeta{RLP\\2.01}
+
+  \note{Notes}{%
+    \begin{itemize}[twocol]
+      \item \textbf{Sicherer i.v. Zugang!}
+      \item Glukose langsam applizieren
+      \item (persönl.) Übergabe an Hausarzt, ÄBP, Klinik
+    \end{itemize}
+  }
+
+  \note{Definition}{%
+    \vspace{-1em}
+    \begin{center}
+      {\kind}: Gewicht < \SI{40}{\kilo\gram}
+      \hspace{2em}
+      {\erw}: Gewicht $\geq$ \SI{40}{\kilo\gram}
+    \end{center}
+  }
+
+  \drug{Glukose}{}{%
+    \dosierung{%
+      {\erw}: \SI{8}{\gram} i.v. + \SI{8}{\gram} Infusion (+ \wdh{} \SI{8}{\gram} i.v.)
+      \\[0.5em]
+      {\kind}: \SI{0.2}{\gram\per\kgKG} i.v. + \SI{0.2}{\gram\per\kgKG} Infusion (+ \wdh{} \SI{0.2}{\gram\per\kgKG} i.v.)
+    }
+  }
+
+  \note{{\kind} Verdünnung G-40}{%
+
+    \begin{center}
+      Glukose \SI{40}{\percent} mit NaCl 1:1 verdünnen \\[0.5em]
+      $\Rightarrow$ \SI{0.2}{\gram\per\milli\liter} \\[1.5em]
+      \textbf{\SI{1}{\milli\liter\per\kgKG} applizieren}
+    \end{center}
+  }
+
+\end{card}
+\end{document}

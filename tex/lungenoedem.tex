@@ -1,75 +1,48 @@
 \documentclass{article}
 
 \usepackage{cheatsheet}
-
-\renewcommand{\sopName}{Lungenödem}
-\renewcommand{\sopVersion}{01-Jan-2014}
-\renewcommand{\sopEditor}{(cwe)}
-
+\usepackage[german]{babel}
 
 \begin{document}
-\sopHeadSkip%
+\noindent
+\begin{card}
+  \cardtitle{Kardiales Lungenödem}{\erw}
+  \cardmeta{RLP\\2.01}
 
-\notes{%
-  \begin{minipage}[t]{0.6\textwidth}
-    \begin{itemize}
-      \item basale RGs | DD Asthma/COPD
+  \note{Notes}{%
+    \begin{itemize}[twocol]
+      \item \textbf{DD:} Asthma, COPD, Pneumonie
+      \item feuchte Rasselgeräusche,\\evtl. schaumiger Auswurf, Unterschenkelödeme, Tachykardie
+      \item Anamnese: Herzinsuffizienz, häufig Hypertonie und/oder KHK
+      \item 12-Kanal EKG
+      \item CPAP/ASB erwägen
     \end{itemize}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[t]{0.38\textwidth}
-    \begin{itemize}
-      \item CPAP erwägen
-    \end{itemize}
-  \end{minipage}
-}
-
-\vfill
-
-\drug{Nitrolingual {\small(Glyceroltrinitrat)}}{%
-  \dosierung{%
-    \SI{1}{\hub} (\wdh{1} | \SIrange{3}{5}{\minute})
   }
-  \vspace{4mm}
-  \begin{minipage}[t]{0.55\textwidth}
+
+  \drug{Nitrolingual}{Glyceroltrinitrat}{%
+    \dosierung{%
+      \SI{1}{\hub} s.l. (\wdh{1} | \SIrange{3}{5}{\minute})
+    }
     \begin{kontraindikationen}
-      \item \textbf{RR} < \SI{110}{\mmHg}
+      \item RR$_\text{sys}$ < \SI{110}{\mmHg}
+      \item alute Rechtsherzbelastung
       \item Einnahme PDE-5-Hemmer \\
         (Viagra {\zeit} < \SI{24}{\hour} | Cialis {\zeit} < \SI{36}{\hour})
     \end{kontraindikationen}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[t]{0.45\textwidth}
-    \begin{kontraindikationen}
-      \item diag.\ re.\herz-infarkt
-      \item bek.\ re.\herz-belastung \\ bei COPD
-    \end{kontraindikationen}
-  \end{minipage}
-}
-
-\vfill
-
-\drug{Lasix {\small(Furosemid)}}{%
-  \dosierung{%
-    \SI{40}{\milli\gram} i.v.
   }
-  \vspace{4mm}
-  \begin{minipage}[t]{0.5\textwidth}
+
+  \drug{Lasix}{Furosemid}{%
+    \dosierung{%
+      \SI{40}{\milli\gram} i.v. (langsam!)
+    }
     \begin{kontraindikationen}
-      \item \textbf{RR} < \SI{110}{\mmHg}
-    \end{kontraindikationen}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[t]{0.5\textwidth}
-    \begin{kontraindikationen}
+      \item RR$_\text{sys}$ < \SI{110}{\mmHg}
       \item Hypokaliämie
+      \item Blasenentleerungsstörung (ohne Katheter)
     \end{kontraindikationen}
-  \end{minipage}
-  \begin{kontraindikationen}
-    \item Blasenentleerungsstörung (ohne Katheter)
-  \end{kontraindikationen}
-}
+  }
 
-\vfill
+% \vfill
 
+\end{card}
 \end{document}

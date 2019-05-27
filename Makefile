@@ -9,6 +9,9 @@ XELATEX_FLAGS  = -halt-on-error -file-line-error -output-directory ${BUILD}
 
 all: ${PDF_FILES}
 
+merge: ${PDF_FILES}
+	pdftk ${BUILD}/*.pdf output ${BUILD}/all.pdf
+
 ${BUILD}/%.pdf: ${TEX}/%.tex cheatsheet.sty | ${BUILD}
 	xelatex ${XELATEX_FLAGS} $<
 

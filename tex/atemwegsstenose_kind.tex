@@ -1,113 +1,51 @@
 \documentclass{article}
 
 \usepackage{cheatsheet}
-
-\renewcommand{\sopName}{Atemwegsstenose {\kind}}
-\renewcommand{\sopVersion}{01-JAN-2014}
-\renewcommand{\sopEditor}{(cwe)}
-
+\usepackage[german]{babel}
 
 \begin{document}
-\sopHeadSkip%
+\noindent
+\begin{card}
+  \cardtitle{Atemwegsstenose}{\kind}
+  \cardmeta{RLP\\2.0}
 
-\vfill
-
-\begin{sopSection}[frametitle={Fremdkörper-Aspiration}]
-  \begin{minipage}[t]{0.4\textwidth}
+  \noteWithNote{Fremdkörperaspiration}{{\kein} Medikamente}{%
     \begin{itemize}
-      \item {\Ox} $\geq$ \SI{10}{\liter\per\minute}
-      \item Zum Husten bringen
-      \item 5 Rücken-Schläge
+      \item Husten / 5 Rücken-Schläge / Kompr. ({\kind}: 5 Abdomen | {\baby}: 5 Thorax)
     \end{itemize}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[t]{0.59\textwidth}
+  }
+  
+  \noteWithNote{Pseudokrupp}{\color{cDrug} $\rightarrow$ SDH+Suprarenin}{%
     \begin{itemize}
-      \item Wenn nicht erfolgreich:
-        \begin{description}
-          \item[Kind > 1:] 5 Abdomen Komp.
-          \item[Säugling:] 5 Thorax Komp.
-        \end{description}
+      \item weniger \textit{krank}, kein/niedriges Fieber, langsamer Beginn,\\
+        häufig abends/nachts im Herbst, typisch bellender Husten
     \end{itemize}
-  \end{minipage}
-\end{sopSection}
-
-\vfill
-
-\begin{sopSection}[frametitle={Insektenstich}]
-  \begin{center}
-    \textbf{Treatment-To-GO!}
-  \end{center}
-  \begin{itemize}
-    \item \textbf{SDH/Rectodelt:} \SI{100}{\milli\gram}
-    \item \textbf{Supra inhalativ:} \SI{0.5}{\milli\gram\per\kgKG}
-      (max. \SI{5}{\milli\gram})
-    \item ggf. Intubation vorbereiten / Maskenbeatmung
-  \end{itemize}
-\end{sopSection}
-
-\vfill
-\pagebreak
-\vfill
-
-\drug{Krupp Syndrom}{%
-  \begin{minipage}{0.5\textwidth}
+  }
+  \noteWithNote{Epiglottitis}{\color{cDrug} $\rightarrow$SDH+Suprarenin}{%
     \begin{itemize}
-      \item rez.\ bellender Husten
-      \item Heiserkeit
-      \item {\kein} Schluckstörung
-      \item häufig Abend/Nacht
+      \item schwer krank, hohes Fieber, plötzlicher Beginn, ganzjährig, \\
+        ausgeprägte Schluckstörung mit Speichelfluss
     \end{itemize}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.5\textwidth}
+  }
+  \noteWithNote{Insektenstich}{\color{cDrug} $\rightarrow$SDH+Suprarenin}{%
     \begin{itemize}
-      \item meist < 3 Jahre
-      \item langsamer Begin
-      \item kein---wenig Fieber
-      \item i.d.R.\ guter AZ
+      \item Schmerzen im Halsbereich, evtl. sichtbare Schwellung, Anamnese
     \end{itemize}
-  \end{minipage}
-
-  \begin{itemize}
-    \item \textbf{feuchte, kühle Luft (ggf. O$_2$ anbieten)}
-    \item \textbf{SDH/Rectodelt:} \SI{100}{\milli\gram}
-    \item \textbf{Supra inhalativ:} \SI{0.5}{\milli\gram\per\kgKG}
-      (max. \SI{5}{\milli\gram})
-  \end{itemize}
-}
-
-\vfill
-
-\drug{Epiglottitis}{%
-  \begin{minipage}{0.5\textwidth}
-    \begin{itemize}
-      \item meist ohne Husten
-      \item kloßige, leise Sprache
-      \item Schluckstörung
-      \item ganzjährig/-tägig
-    \end{itemize}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.5\textwidth}
-    \begin{itemize}
-      \item 2--6 Jahre
-      \item plötzlicher Begin
-      \item hohes Fieber
-      \item i.d.R.\ schlechter AZ
-    \end{itemize}
-  \end{minipage}
-
-  \begin{center}
-    \textbf{Treatment-To-GO!}
-  \end{center}
-  \begin{itemize}
-    \item \textbf{SDH/Rectodelt:} \SI{100}{\milli\gram}
-    \item \textbf{Supra inhalativ:} \SI{0.5}{\milli\gram\per\kgKG}
-      (max. \SI{5}{\milli\gram})
-  \end{itemize}
-}
-
-\vfill
-
+  }
+  \drug{SDH}{Prednisolon}{%
+    \dosierung{%
+      \SI{3}{\milli\gram\per\kgKG} i.v.
+      \hspace{0.5em}|\hspace{0.5em}
+      \SI{100}{\milli\gram} supp. (Rectodelt)
+    }
+  }
+  \pgfmathsetmacro{\contentLinePaddingTop}{0.25}
+  \drug{Suprarenin}{Adrenalin}{%
+    \dosierung{\SI{0.5}{\milli\gram\per\kgKG} (max \SI{5}{\milli\gram}) p.i. (unverdünnt)}
+    \begin{kontraindikationen}
+      \item Tachykardie / Tachyarrhytmie \\ ( {\puls} > \SI{160}{\per\minute})
+      \item schwerer angeborener Herzfehler
+    \end{kontraindikationen}
+  }
+\end{card}
 \end{document}

@@ -6,32 +6,40 @@ Aktuelle Version: [**Download**](https://github.com/weinshec/SOPCheatSheets/rele
 
 ## Beschreibung
 
-Die SOP CheatSheets sollen praktische Hilfen im Notfall-Einsatz sein und
+Die SOP CheatSheets sind praktische Hilfen im Notfall-Einsatz und
 bestehen aus meiner persönlichen Auswahl an Informationen. **Es ist daher
 unbedingt notwendig die original SOP zu kennen und zu beherrschen!**
 
-Alle SOP CheatSheets sind mit einem Versions-Datum versehen, welches mit dem
-*Freigabe-Datum* der zugrunde liegenden SOP übereinstimmt. Eine Übersicht der
-erstellten SOPs mit Versions-Datum findet sich in folgender Tabelle
+Alle SOP CheatSheets sind mit einer Version und Region (RLP = Rheinland-Pfalz;
+RHN = Rheinhessen-Naha) versehen. Eine Übersicht der erstellten SOPs mit
+Versions-Datum findet sich in folgender Tabelle
 
-| SOP Name               | Datum        |
-| ---------------------- | ------------ |
-| ACS                    | 02-OCT-2016  |
-| Analgesie              | 16-FEB-2017  |
-| Anaphylaxie Erw.       | 01-APR-2014  |
-| Anaphylaxie Kind       | 01-APR-2014  |
-| Atemwegsstenose Kind   | 01-JAN-2014  |
-| Bronchospastik Erw.    | 01-JAN-2014  |
-| Bronchospastik Kind    | 01-JAN-2014  |
-| Hypoglykämie Erw./Kind | 01-JAN-2014  |
-| Krampfanfall Erw.      | 01-OCT-2014  |
-| Krampfanfall Kind      | 01-FEB-2014  |
-| Lungenödem             | 01-JAN-2014  |
-| Schlaganfall           | 01-JAN-2015  |
+| SOP Name               | Region | Version |
+| ---------------------- | ------ | ------- |
+| ACS                    | RLP    | 2.0     |
+| Analgesie              | RHN    | 02/17   |
+| Anaphylaxie Erw.       | RLP    | 2.01    |
+| Anaphylaxie Kind       | RLP    | 2.0     |
+| Atemwegsstenose Kind   | RLP    | 2.0     |
+| Bronchospastik Erw.    | RLP    | 2.01    |
+| Bronchospastik Kind    | RLP    | 2.01    |
+| Hypoglykämie Erw./Kind | RLP    | 2.01    |
+| Krampfanfall Erw.      | RLP    | 2.0     |
+| Krampfanfall Kind      | RLP    | 2.01    |
+| Lungenödem             | RLP    | 2.01    |
+| Schlaganfall           | RHN    | 01/15   |
+
+## Changelog
+
++ **2017-12-20**
+  - Initialer Release.
+  - Alles SOPs für Rheinhessen
++ **2019-05-27**
+  - Update Design
+  - Alle SOPs (außer Analgesie/Schlaganfall) auf landesweite SOPs umgestellt
 
 ## Disclaimer
 
 SOP cheatsheets sind **kein offizielles Dokument des ÄLRD** und stellen
 somit weder den Anspruch auf Vollständigkeit noch Korrektheit. Die für den
-Rettungsdienst bindenden SOPs finden sich unter http://rettungsdienst-rlp.de
-
+Rettungsdienst bindenden SOPs finden sich unter http://aelrd-rlp.de

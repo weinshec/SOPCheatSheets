@@ -1,94 +1,64 @@
 \documentclass{article}
 
 \usepackage{cheatsheet}
-
-\renewcommand{\sopName}{Schlaganfall}
-\renewcommand{\sopVersion}{01-JAN-2015}
-\renewcommand{\sopEditor}{(cwe)}
-
+\usepackage[german]{babel}
 
 \begin{document}
-\sopHeadSkip%
+\noindent
+\begin{card}
+  \cardtitle{Schlaganfall}{\erw}
+  \cardmeta{RHN\\01/15}
 
-\notes{%
-  \begin{minipage}{0.5\textwidth}
-    \begin{itemize}
-      \item \textbf{F}ace \textbf{A}rm \textbf{S}peech \textbf{T}ime
-      \item möglichst 2 i.v.\ Zugänge
-      \item an Glukose denken!
-    \end{itemize}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.5\textwidth}
-    \centering
-    \textbf{Zielwerte}
-    \begin{tabular}{ll}
-      \toprule
-      \textbf{RR}      & \SIrange{160}{220}{\mmHg} \\
-      \textbf{BZ}      & > \SI{80}{\milli\gram\percent} \\
-      \textbf{Temp}    & < \SI{37.5}{\celsius} \\
-      \textbf{SpO$_2$} & > \SI{94}{\percent} \\
-      \bottomrule
-    \end{tabular}
-  \end{minipage}
-}
-
-\vfill
-
-\drug{Vomex {\small(Dimenhydrinat)}}{%
-  \dosierung{%
-    \SI{62.5}{\milli\gram} i.v.
+  \note{Notes}{%
+    \begin{minipage}[t]{0.48\textwidth}
+      \begin{itemize}
+        \item \textbf{F}ace \textbf{A}rm \textbf{S}peech \textbf{T}ime
+        \item möglichst 2 i.v.\ Zugänge
+        \item an Glukose denken!
+        \item NA nur bei vitaler Bedrohung
+      \end{itemize}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+      \centering
+      \textbf{\color{cNote}Zielwerte}\\[0.5em]
+      \begin{tabular}{ll}
+        \textbf{RR}      & \SIrange{160}{220}{\mmHg} \\
+        \textbf{BZ}      & > \SI{80}{\milli\gram\percent} \\
+        \textbf{Temp}    & < \SI{37.5}{\celsius} \\
+        \textbf{SpO$_2$} & > \SI{94}{\percent} \\
+      \end{tabular}
+    \end{minipage}
   }
-  \vspace{4mm}
-  \begin{minipage}[b]{0.5\textwidth}
+
+  \drug{Vomex}{Dimenhydrinat}{%
+    \dosierung{%
+      \SI{62.5}{\milli\gram} i.v.
+    }
     \begin{kontraindikationen}
       \item Bewusstseinsstörung
       \item Asthma (akut/bek.)
       \item Engwinkelglaukom
       \item Phäochromozytom
-    \end{kontraindikationen}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[b]{0.5\textwidth}
-    \begin{kontraindikationen}
       \item Porphyrie
       \item Prostatavergrößerung
       \item Epilepsie
       \item Arrythmie o. {\puls} < \SI{60}{\per\minute}
     \end{kontraindikationen}
-  \end{minipage}
-}
+  }
 
-\vfill
-
-\newpage
-
-\drug{Glukose \SI{40}{\percent}}{%
-  \dosierung{%
-    \SIrange{2}{4}{\gram} i.v.}
-  \begin{kontraindikationen}
-    \item \textbf{Rücklaufprobe!}
-    \item nicht über \SI{160}{\milli\gram\percent}
-  \end{kontraindikationen}
-}
-
-\vfill
-
-\drug{Stroke Check {\arzt}}{%
-  \begin{enumerate}
-    \setlength\itemsep{1em}
-    \item Alter / {\mann} / {\frau}
-    \item FAST Symptomatik
-    \item Genaue {\uhr} des Auftretens
-    \item {\kein} Erwachen mit Symptomen
-    \item {\kein} Pflegefall vor Ereignis
-    \item Arrhythmie
-    \item Gerinnungshemmer
-    \item Vitale Funktionen (NA nötig)
-    \item Übergabeort: CCT / NA (Lyse Kandidat?)
-  \end{enumerate}
-}
-
-\vfill
-
+  \note{Stroke Check {\arzt}}{%
+    \begin{enumerate}[twocol]
+      \item Alter / {\mann} / {\frau}
+      \item FAST Symptomatik
+      \item Genaue {\uhr} des Auftretens
+      \item {\kein} Erwachen mit Symptomen
+      \item {\kein} Pflegefall vor Ereignis
+      \item Arrhythmie
+      \item Gerinnungshemmer
+      \item Vitale Funktionen (NA nötig)
+      \item Übergabeort: CCT / NA \\ (Lyse Kandidat?)
+    \end{enumerate}
+  }
+\end{card}
 \end{document}

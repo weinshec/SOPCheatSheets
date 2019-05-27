@@ -1,41 +1,76 @@
 \documentclass{article}
 
 \usepackage{cheatsheet}
+\usepackage[german]{babel}
 
-\renewcommand{\sopName}{Anaphylaxie {\erw}}
-\renewcommand{\sopVersion}{01-APR-2014}
-\renewcommand{\sopEditor}{(cwe)}
-
+\newcommand{\stadium}[4]{%
+  \texttt{0{#1} | 1{#2} | 2{#3} | 3{#4}}
+}
 
 \begin{document}
-\sopHeadSkip%
+\noindent
+\begin{card}
+  \cardtitle{Anaphylaxie\\\small({\erw}/{\kind} $\geq$ \SI{10}{\kilo\gram})}{\erw}
+  \cardmeta{RLP\\2.01}
 
-\vfill
+  \note{Notes}{%
+    \begin{itemize}
+      \item Bei Suprarenin i.v. $\Rightarrow$ regelmäßige RR-Kontrolle
+    \end{itemize}
+  }
 
-\notes{%
-  \begin{itemize}
-    \item Bei \textbf{Supra}: {\puls} beachten!
-    \item \textbf{Supra} unverdünnt vernebeln!
-    \item \textbf{Stadium IV} = Reanimation
-  \end{itemize}
-}
+  \drugWithNote{Vollelektrolyt-Lösung}{}{%
+    \stadium{\tick}{\tick}{\tick}{\tick}
+  }{%
+    \dosierung{\SI{20}{\milli\liter\per\kgKG} i.v.}
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \textbf{\color{cNote}überwiegende Atemstörung} \\
+      zügig infundieren
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \textbf{\color{cNote}überwiegende Kreislaufstörung} \\
+      Bolus / Druckinfusion
+    \end{minipage}
+  }
 
-\vfill
+  \drugWithNote{SDH}{Prednisolon}{
+    \stadium{-}{\tick}{\tick}{\tick}
+  }{%
+    \dosierung{%
+      \SI{250}{\milli\gram} i.v. (\erw>\SI{50}{\kgKG})
+      \\[0.5em]
+      \SI{3}{\milli\gram\per\kgKG} i.v. (\kind \SIrange{10}{50}{\kgKG})
+    }
+  }
 
-\drug{Medikamente ({\erw} $\geq$ \SI{10}{\kilo\gram})}{%
-  \centering
-  \begin{tabular}{clcccc}
-                            &                   & \textbf{Dosierung}                                   & \textbf{I} & \textbf{II} & \textbf{III} \\
-    \midrule
-                            & \textbf{SDH}      & \SI{250}{\milli\gram} (\SI{3}{\milli\gram\per\kgKG}) & {\tick}    & {\tick}     & {\tick} \\
-                            & \textbf{Fenistil} & \SI{4}{\milli\gram} i.v.                             & {\tick}    & {\tick}     & {} \\[1em]
-    \multirow{2}{*}{\herz}  & \textbf{VEL}      & \SI{15}{\milli\liter\per\kgKG} i.v.                  & {}         & {\tick}     & {\tick} \\
-                            & \textbf{Supra}    & \SIrange{0.01}{0.5}{\milli\gram} i.v.                & {}         & {}          & {\tick} \\[1em]
-    {\resp}                 & \textbf{Supra}    & \SI{5}{\milli\gram} (inhalativ)                      & {}         & {\tick}     & {\tick} \\
-    \bottomrule
-  \end{tabular}
-}
+  \drugWithNote{Suprarenin}{Adrenalin}{%
+    \stadium{-}{-}{\tick}{\tick}
+  }{%
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \textbf{\color{cNote}überwiegende Atemstörung} \\[0.5em]
+      \dosierung{\SI{5}{\milli\gram} p.i. (unverdünnt)}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \textbf{\color{cNote}überwiegende Kreislaufstörung} \\[0.5em]
+      \dosierung{\SIrange{0.01}{0.5}{\milli\gram} i.v.}
+    \end{minipage}
+    \begin{kontraindikationen}
+      \item Tachykardie / Tachyarrhytmie \\ ( {\puls} > \SI{140}{\per\minute})
+      \item Frischer Myokardinfarkt
+      \item Kreißende Patientin
+    \end{kontraindikationen}
+  }
 
-\vfill
-
+  \drugWithNote{Fenistil}{Dimetinden}{%
+    \stadium{\tick}{\tick}{\tick}{\tick}
+  }{%
+    \dosierung{\SI{4}{\milli\gram} i.v. (\kind\SI{1}{\milli\gram\per10\kgKG})}
+  }
+\end{card}
 \end{document}

@@ -2,26 +2,34 @@
 \ProvidesPackage{cheatsheet}
 
 %______________________________________________________________________________
-%                                                                META VARIABLES
-\newcommand{\sopName}{sopName}
-\newcommand{\sopVersion}{01--01--1970}
-\newcommand{\sopRegion}{Rheinhessen \& Bad Kreuznach}
-\newcommand{\sopDisclaimer}{%
-  SOP cheatsheets sind \textbf{kein offizielles Dokument des ÄLRD} und stellen
-  somit weder den Anspruch auf Vollständigkeit noch Korrektheit. Die für den
-  Rettungsdienst bindenden und aktuellen SOPs finden sich unter
-}
-\newcommand{\sopURL}{http://rettungsdienst-rlp.de}
-\newcommand{\sopEditor}{(xxx)}
-\newcommand{\sopContent}{content}
-
-%______________________________________________________________________________
 %                                                                        BASICS
+\usepackage[driver=none]{geometry}
+\usepackage[utf8]{inputenc}
 \usepackage[cmyk]{xcolor}
-\usepackage{eso-pic}   % AddToShipoutPicture support
-\usepackage{multicol}  % 2-columns
+\usepackage{multicol}
 \usepackage{multirow}
 \usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{fontspec}
+
+\usepackage{enumitem}
+\setlist[itemize]{nosep, parsep=0.4em, left=0.75em}
+\setlist[enumerate]{nosep, parsep=0.4em, left=0.75em}
+\setlist[description]{nosep, parsep=0.4em, left=0.75em}
+\SetEnumitemKey{twocol}{%
+  before  = \vspace{-2em} \spaceskip 0.3em \begin{multicols}{2},
+  after   = \end{multicols}
+}
+
+\usepackage{setspace}
+\setlength{\columnsep}{0em}
+
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
 \usepackage{siunitx}
 \sisetup{%
   detect-all = true,
@@ -35,34 +43,27 @@
 
 %______________________________________________________________________________
 %                                                                        COLORS
-\DefineNamedColor{named}{myBlue}{RGB}{32,109,252}
-\DefineNamedColor{named}{myGrey}{RGB}{35, 33, 30}
+\definecolor{cBorder}{RGB}{30,30,30}
+\definecolor{cTitleBg}{RGB}{32,109,252}
+\definecolor{cMetaBg}{RGB}{230,180,0}
+\definecolor{cDrug}{RGB}{32,109,252}
+\definecolor{cDose}{RGB}{200,50,50}
+\definecolor{cNote}{RGB}{230,180,0}
+\definecolor{cFaIcons}{RGB}{30,30,30}
 
 %______________________________________________________________________________
 %                                                                      GEOMETRY
-\usepackage[driver=none]{geometry}
 \geometry{%
-  paperwidth=96mm,
-  paperheight=135mm,
-  textwidth=89mm,
-  textheight=130mm,
-  top=4mm,
-  bottom=1mm,
-  left=3.5mm,
-  right=3.5mm,
-  columnsep=4mm,
+  paperwidth=76mm,
+  paperheight=99mm,
+  top=1.5mm,
+  bottom=1.5mm,
+  left=1.5mm,
+  right=1.5mm,
 }
-
-\usepackage{setspace}
-
-\setlength{\parindent}{0em}
-\setlength{\parskip}{0mm}
-\setlength{\leftmargini}{6mm}
 
 %______________________________________________________________________________
 %                                                                         FONTS
-\usepackage{fontspec}
-
 \setmainfont[%
   Path           = fonts/,
   Extension      = .ttf,
@@ -73,153 +74,196 @@
   Mapping        = tex-text,
 ]{SourceSansPro}
 
-\newfontfamily{\fa}[%
+\newfontfamily{\fas}[%
   Path      = fonts/,
-  Extension = .otf,
-]{FontAwesome}
+]{FontAwesome5Free-Solid-900.otf}
+\newfontfamily{\far}[%
+  Path      = fonts/,
+]{FontAwesome5Free-Regular-400.otf}
 
-\newcommand{\fHead}[2]{%
-  {\fontsize{#1}{#1}\selectfont\addfontfeature{LetterSpace=-2.0}\textbf{#2}}
-}
-\newcommand{\fTitle}[2]{%
-  {\fontsize{#1}{#1}\selectfont\color{myBlue}#2}
-}
+\newcommand{\setFont}[2]{\fontsize{#1}{#2}\selectfont}
 
-\newcommand{\fsNormal}{\fontsize{9pt}{12pt plus 0.125pt minus 0.125pt}}
-\newcommand{\fsSmall}{\fontsize{8pt}{11pt plus 0.125pt minus 0.125pt}}
-\renewcommand{\normalsize}{\fsNormal\selectfont}
-\renewcommand{\small}{\fsSmall\selectfont}
-
-
-%______________________________________________________________________________
-%                                                             IMAGES & GRAPHICS
-\usepackage{graphicx}
-\usepackage{tikz}
-\usetikzlibrary{shadows}
-
+\newcommand{\fTitle}{\setFont{10pt}{10pt}}
+\newcommand{\fMeta}{\setFont{7pt}{8pt}}
+\newcommand{\fIcon}{\setFont{11pt}{11pt}}
+\newcommand{\fSectionTitle}{\setFont{10pt}{10pt}}
+\newcommand{\fSectionSubTitle}{\setFont{5pt}{5pt}}
+\newcommand{\fContent}{\setFont{6pt}{7pt}}
+\newcommand{\fContentSide}{\setFont{6pt}{7pt}}
 
 %______________________________________________________________________________
-%                                                                  COMMON ITEMS
-\newcommand{\puls}{{\fa\char"F21E}}
-\newcommand{\frau}{{\fa\char"F182}}
-\newcommand{\mann}{{\fa\char"F183}}
-\newcommand{\kind}{{\fa\char"F1AE}}
-\newcommand{\uhr }{{\fa\char"F017}}
-\newcommand{\kein}{{\fa\char"F05E}}
-\newcommand{\arzt}{{\fa\char"F0F0}}
-\newcommand{\tick}{{\fa\char"F00C}}
-\newcommand{\herz}{{\fa\char"F08A}}
-\newcommand{\resp}{{\fa\char"F289}}
-\newcommand{\wdh }{{\fa\char"F01E}}
-\newcommand{\ki  }{{\fa\char"F090}}
+%                                                                         ICONS
+\newcommand{\frau}{{\fas\char"F182}}
+\newcommand{\mann}{{\fas\char"F183}}
+\newcommand{\kind}{{\fas\char"F1AE}}
+\newcommand{\baby}{{\fas\char"F77C}}
+
+\newcommand{\ki  }{{\far\char"F14A}}
+\newcommand{\kein}{{\fas\char"F05E}}
+\newcommand{\tick}{{\fas\char"F00C}}
+
+\newcommand{\zeit}{{\fas\char"F1DA}}
+\newcommand{\uhr }{{\far\char"F017}}
+\newcommand{\arzt}{{\fas\char"F0F0}}
+\newcommand{\wdh }{{\fas\char"F2F9}}
+\newcommand{\puls}{{\fas\char"F21E}}
+
 \newcommand{\erw }{\mann\frau}
-\newcommand{\zeit}{\uhr}
 \newcommand{\Ox}{O$_2$}
 \newcommand{\SpOx}{Sp\Ox}
 
-
 %______________________________________________________________________________
-%                                                                    BACKGROUND
-\newcommand{\background}{}
-\AddToShipoutPicture{\background}
+%                                                         STRUCTURAL COMPONENTS
+\pgfmathsetmacro{\cardWidth}{7.2}
+\pgfmathsetmacro{\cardHeight}{9.5}
+\pgfmathsetmacro{\titleHeight}{1.5}
+\pgfmathsetmacro{\titleWidth}{\cardWidth}
+\pgfmathsetmacro{\stripWidth}{0.7}
+\pgfmathsetmacro{\stripHeight}{1.2}
+\pgfmathsetmacro{\stripPadding}{0.2}
+\pgfmathsetmacro{\contentLinePaddingTop}{0.65}
+\pgfmathsetmacro{\contentLinePaddingBottom}{0.2}
+\pgfmathsetmacro{\contentLineLength}{0.6*\cardWidth}
 
-\renewcommand{\background}{%
-  \begin{tikzpicture}[
-    remember picture,
-    overlay,
-    every node/.style={color=white, align=center},
-    title/.style={minimum width=\paperwidth, fill=white}
-  ]
-    % background color
-    \fill[myGrey] (0,0) rectangle (\paperwidth,\paperheight);
-
-    % Draw header on first page
-    \ifnum\thepage=1\relax
-
-      \fill[myBlue]
-        (\paperwidth,\paperheight) rectangle ++(-\paperwidth,-38mm);
-
-      \node[anchor=north] at (0.27\paperwidth,\paperheight-1mm) {%
-          \fHead{42pt}{SOP}\\
-          \fHead{27pt}{CHEAT}\\
-          \fHead{27pt}{SHEET}\\
-          \textbf{\sopRegion}\\[2mm]
-          \parbox[b]{10mm}{\fontsize{7pt}{7pt}\selectfont\raggedleft{version}}
-          \parbox[b]{20mm}{\fontsize{11pt}{11pt}\selectfont\sopVersion}
-          \parbox[b]{10mm}{\fontsize{7pt}{7pt}\selectfont\sopEditor}
-      };
-
-      \node[anchor=north] at (0.75\paperwidth,\paperheight-1mm) {%
-        Disclaimer\\[2mm]
-        \parbox{0.42\paperwidth}{%
-          \setstretch{1.5}\fontsize{7pt}{7pt}\selectfont
-          \textit{\sopDisclaimer}
-        }\\[3mm]
-        \sopURL
-      };
-
-      \node[title, anchor=north, minimum height=10mm] (title) at (0.5\paperwidth, \paperheight-38mm) {%
-        \fTitle{20pt}{\sopName}
-      };
-      \draw[color=myBlue, ultra thick] (title.south west)--(title.south east);
-
-    % Draw headline on 2+ pages
-    \else
-      \fill[myBlue]
-        (\paperwidth,\paperheight) rectangle ++(-\paperwidth,-1mm);
-    \fi
-
-    % Footline
-    \fill[myBlue]
-      (0,0) rectangle ++(\paperwidth,1mm);
-
-  \end{tikzpicture}
+\def\shapeCard{
+  (0,0) rectangle (\cardWidth,\cardHeight)
 }
 
-%______________________________________________________________________________
-%                                                                     STRUCTURE
-
-\newcommand{\sopHeadSkip}{\vspace*{41mm}}
-
-\usepackage[framemethod=tikz]{mdframed}
-\newmdenv[
-  backgroundcolor=white,
-  roundcorner=4pt,
-  frametitlefont=\Large\color{myBlue}\strut,
-  frametitlerule=true,
-  frametitlerulewidth=0.3mm,
-  frametitlerulecolor=myBlue,
-  frametitleaboveskip=2mm,
-  frametitlebelowskip=0.5mm,
-  innertopmargin=3mm,
-  innerbottommargin=3mm,
-  skipabove=1mm,
-  skipbelow=0mm,
-  leftmargin=-2mm,
-  rightmargin=-2mm,
-  innerleftmargin=3mm,
-  innerrightmargin=3mm,
-]{sopSection}
-
-\newcommand{\drug}[2]{%
-  \begin{sopSection}[frametitle={#1}]
-    #2
-  \end{sopSection}
+\tikzset{
+  cardcorners/.style={
+    rounded corners=0.2cm
+  },
+  elementcorners/.style={
+    rounded corners=0.1cm
+  },
+  stripshadow/.style={
+    drop shadow={opacity=.5, color=black}
+  },
+  strip/.style={
+    elementcorners,
+    stripshadow
+  },
+  title/.style={
+    minimum width=1cm*\titleWidth,
+    minimum height=1cm*\titleHeight,
+    align=center,
+    font=\fTitle
+  },
+  icon/.style={
+    circle,
+    minimum width=2em,
+    font=\fIcon
+  }
 }
 
-\newcommand{\notes}[1]{%
-  \begin{sopSection}[frametitle={}]
-    #1
-  \end{sopSection}
+\newcounter{contentNodeCounter}
+\setcounter{contentNodeCounter}{0}
+\newcommand{\newContentNode}{\stepcounter{contentNodeCounter}}
+\newcommand{\contentNode}{contentNode-\arabic{contentNodeCounter}}
+
+\newcommand{\carddebug}{%
+  \draw[step=1cm, help lines] (0,0) grid (\cardWidth,\cardHeight);
+}
+
+\newcommand{\cardborder}{%
+    \draw[cBorder, cardcorners] \shapeCard;
+}
+
+\newcommand{\cardtitle}[2]{%
+  \begin{scope}[even odd rule]
+    \clip[cardcorners] \shapeCard;
+    \node[title, fill=cTitleBg, opacity=0.85] (\contentNode) at (0.5*\cardWidth,\cardHeight-\titleHeight/2) {%
+      \color{white}\uppercase{#1}
+    };
+    \node[icon, fill=white] at (0.1*\cardWidth, \cardHeight-0.75) {%
+      \color{cTitleBg}#2
+    };
+  \end{scope}
+}
+
+\newcommand{\cardmeta}[2]{
+  \begin{scope}[even odd rule]
+    \clip[cardcorners] \shapeCard;
+    \fill[strip, cMetaBg]
+      (\cardWidth-\stripWidth-\stripPadding,\cardHeight-\stripHeight)
+      rectangle
+      (\cardWidth-\stripPadding,\cardHeight+0.2);
+  \end{scope}
+  \node[above, align=center, font=\fMeta]
+    at (\cardWidth-\stripPadding-0.5*\stripWidth,\cardHeight-\stripHeight)
+    {#1};
+}
+
+% color, title, subtitle, side, content
+\newcommand{\contentSection}[5]{%
+  \coordinate (anchor) at (\contentNode.south);
+  \draw[#1] (anchor) ++(-0.5*\cardWidth, -\contentLinePaddingTop) -- +(\contentLineLength,0)
+    node (lineEnd) {}
+    node[above left, inner xsep=0, inner ysep=0.5mm] (title) {%
+      \fSectionSubTitle{#3} \hspace{0.5em} \fSectionTitle{#2}
+    };
+  \node[
+    align=left,
+    inner sep=0pt,
+    right=0.5em of lineEnd,
+    anchor=south west] (side)
+  {\fContentSide#4};
+
+  \newContentNode%
+  \node[
+    align=left,
+    inner sep=0pt,
+    text width=1cm*\cardWidth,
+    below=1cm*(\contentLinePaddingTop+\contentLinePaddingBottom) of anchor,
+    anchor=north] (\contentNode)
+  {\fContent#5};
+}
+
+\newcommand{\contentSectionPlain}[1]{%
+  \coordinate (anchor) at (\contentNode.south);
+  \newContentNode%
+  \node[
+    align=left,
+    inner sep=0pt,
+    text width=1cm*\cardWidth,
+    below=1cm*\contentLinePaddingBottom of anchor,
+    anchor=north] (\contentNode)
+  {\fContent#1};
+}
+
+\newcommand{\drug}[3] {%
+  \contentSection{cDrug}{#1}{#2}{}{#3}
+}
+
+\newcommand{\drugWithNote}[4] {%
+  \contentSection{cDrug}{#1}{#2}{#3}{#4}
+}
+
+\newcommand{\note}[2] {%
+  \contentSection{cNote}{#1}{}{}{#2}
+}
+
+\newcommand{\noteWithNote}[3] {%
+  \contentSection{cNote}{#1}{}{#2}{#3}
+}
+
+\newcommand{\headlessNote}[1] {%
+  \contentSectionPlain{#1}
 }
 
 \newcommand{\dosierung}[1]{%
+  \vspace{-2em}
   \begin{center}
-    \textbf{#1}
+    \color{cDose}\textbf{#1}
   \end{center}
-  \vspace{-2mm}
+  \vspace{-0.5em}
 }
 
 \newenvironment{kontraindikationen}
-  {\begin{itemize}\renewcommand{\labelitemi}{\ki}}
+  {\begin{itemize}[twocol, label={\color{cFaIcons}\ki}]}
   {\end{itemize}}
+
+
+\newenvironment{card}
+  {\begin{tikzpicture}\cardborder}
+  {\end{tikzpicture}}

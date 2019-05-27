@@ -1,0 +1,65 @@
+\documentclass{article}
+
+\usepackage{cheatsheet}
+\usepackage[german]{babel}
+
+\begin{document}
+\noindent
+\begin{card}
+  \cardtitle{Krampfanfall}{\small\erw\footnotesize\kind}
+  \cardmeta{RLP\\\erw\ 2.0\\{\tiny\kind}\ 2.01}
+
+  \note{Notes}{%
+    \begin{itemize}[twocol]
+      \item \textbf{MAD:} Immer nur \SI{5}{\milli\gram} (\SI{1}{\milli\liter})
+        aufziehen und mit Druck applizieren
+      \item {\kind}: Paracetamol/Ibuprofen durch Eltern erwägen
+      \item Physikalische\ Kühlung
+        \begin{description}
+          \item[{\erw}:] T > \SI{37.5}{\celsius}
+          \item[{\kind}:] T > \SI{38.5}{\celsius}
+        \end{description}
+    \end{itemize}
+  }
+
+  \drug{(\erw) Dormicum}{Midazolam}{%
+    \dosierung{%
+      \SI{5}{\milli\gram}
+      + {\wdh} \SI{5}{\milli\gram}
+      + {\wdh} 2x\SI{2.5}{\milli\gram}
+    }
+    \begin{kontraindikationen}
+      \item Krampf beendet
+      \item postiktaler Zustand
+      \item Myasthenia Gravis
+      \item C$_2$-Intoxikation
+      \item Drogen/Medikamenten-Intoxikation
+    \end{kontraindikationen}
+  }
+
+  \drug{(\kind)Diazepam}{Midazolam}{%
+    \dosierung{%
+        \SI{5}{\milli\gram} Rectiole ({\kind} \SIrange{5}{15}{\kilo\gram})
+        \\[0.5em]
+        \SI{10}{\milli\gram} Rectiole ({\kind} >\SI{15}{\kilo\gram})
+    }
+    \begin{kontraindikationen}
+      \item {\kind} < 6 Monate oder \SI{5}{\kilo\gram}
+      \item Krampf beendet
+      \item postiktaler Zustand
+      \item Myasthenia Gravis
+      \item C$_2$-Intoxikation
+      \item Drogen/Medikamenten-Intoxikation
+    \end{kontraindikationen}
+  }
+
+  \drug{Glukose}{}{%
+    \dosierung{%
+      {\erw}: \SI{8}{\gram} i.v. + \SI{8}{\gram} Infusion (+ \wdh{} \SI{8}{\gram} i.v.)
+      \\[0.5em]
+      {\kind}: \SI{0.2}{\gram\per\kgKG} i.v. + \SI{0.2}{\gram\per\kgKG} Infusion (+ \wdh{} \SI{0.2}{\gram\per\kgKG} i.v.)
+    }
+  }
+
+\end{card}
+\end{document}

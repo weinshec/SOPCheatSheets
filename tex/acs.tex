@@ -1,76 +1,52 @@
 \documentclass{article}
 
 \usepackage{cheatsheet}
-
-\renewcommand{\sopName}{ACS}
-\renewcommand{\sopVersion}{02-OCT-2016}
-\renewcommand{\sopEditor}{(cwe)}
-
+\usepackage[german]{babel}
 
 \begin{document}
-\sopHeadSkip%
+\noindent
+\begin{card}
+  \cardtitle{Akutes Coronar-Syndrom}{\erw}
+  \cardmeta{RLP\\2.0}
 
-\vfill
+  \note{Notes}{%
+    \begin{itemize}[twocol]
+      \item \textbf{DD} Aortenanyndrom\\ \textbf{DD} Lungenembolie
+      \item {\Ox} bei {\SpOx} < \SI{90}{\percent} | Dyspnoe
+      \item Aspirin auch bei Dauermedikation
+      \item Nitro ggf. zur Schmerztherapie, \textbf{keine Routinegabe!}
+    \end{itemize}
+  }
 
-\notes{%
-  \begin{itemize}
-    \item \textbf{CAVE:} \hspace{1mm} DD Aortenaneurysma
-    \item {\Ox} nur bei {\SpOx} < \SI{94}{\percent} oder Dyspnoe
-    \item Aspirin auch bei Dauermedikation
-    \item Diagnose-to-Balloon {\zeit} < \SI{90}{\minute}
-  \end{itemize}
-}
+  \drug{Aspirin}{Acetylsalicylsäure}{%
+    \dosierung{\SI{250}{\milli\gram} i.v.}
+    \begin{kontraindikationen}
+      \item Asthmaanfall | exacerbierte COPD
+      \item GI-Blutung, Teerstuhl, Bluterbrechen
+      \item Ulcus (Magen/Zwölffingerdarm)
+      \item OP {\zeit} < \SI{24}{\hour}
+    \end{kontraindikationen}
+  }
 
-\vfill
+  \drug{Heparin}{Heparin-Natrium}{%
+    \dosierung{\SI{60}{\IE\per\kgKG} (\SI{5000}{\IE}) i.v.}
+    \begin{kontraindikationen}
+      \item Heparin induzierte Thrombozythopenie
+      \item Therapierefraktäre Hypertonie
+      \item Fortgeschrittener bösartiger Tumor
+      \item Frische Blutung, GI-Blutung, Teerstuhl, Bluterbrechen
+      \item OP/arterielle Punktion {\zeit} < \SI{7}{\day}
+    \end{kontraindikationen}
+  }
 
-\drug{Nitrolingual {\small(Glyceroltrinitrat)}}{%
-  \dosierung{\SI{1}{\hub} (\wdh{1} | \SIrange{3}{5}{\minute})}
-  \begin{kontraindikationen}
-    \item \textbf{RR} < \SI{110}{\mmHg}
-    \item bekannte Rechtsherzbelastung bei COPD
-    \item diagnostizierter Rechtsherzinfarkt
-    \item Einnahme PDE-5-Hemmer
-      (Viagra {\uhr} < \SI{24}{\hour} | Cialis {\uhr} < \SI{36}{\hour})
-  \end{kontraindikationen}
-}
-
-\vfill
-
-\drug{Aspirin {\small(Acetylsalicylsäure)}}{%
-  \dosierung{\SI{250}{\milli\gram} i.v.}
-  \begin{kontraindikationen}
-    \item Asthma / COPD
-    \item Ulcus, GI-Blutung, Teerstuhl, Bluterbrechen
-  \end{kontraindikationen}
-}
-
-\vfill
-
-\drug{Heparin {\small(Heparin-Natrium)}}{%
-  \dosierung{\SI{60}{\IE\per\kgKG} (\SI{5000}{\IE}) i.v.}
-  \begin{kontraindikationen}
-    \item Heparin induzierte Thrombozythopenie
-    \item Therapierefraktäre Hypertonie
-    \item Frische Blutung, GI-Blutung, Teerstuhl
-    \item OP/arterielle Punktion {\zeit} < \SI{7}{\day}
-    \item bösartiger Tumor
-  \end{kontraindikationen}
-}
-
-\vfill
-
-\notes{%
-  \begin{center}
-    \hspace{-2.5em}
-    \rotatebox{90}{%
-      \fontsize{16pt}{16pt}\selectfont\color{myBlue}
-      \hspace{2mm}EKG Beispiel
-    }
-    \hspace{1em}
-    \includegraphics[width=0.75\textwidth]{img/stemi.png}
-  \end{center}
-}
-
-\vfill
-
+  \drug{Nitrolingual}{Glyceroltrinitrat}{%
+    \dosierung{\SI{1}{\hub}}
+    \begin{kontraindikationen}
+      \item RR$_{\text{sys}}$ < \SI{110}{\mmHg}
+      \item akute Rechtsherzbelastung
+      \item Einnahme PDE-5-Hemmer \\
+        (Viagra {\zeit} < \SI{24}{\hour} | Cialis {\zeit} < \SI{36}{\hour})
+    \end{kontraindikationen}
+  }
+\end{card}
 \end{document}

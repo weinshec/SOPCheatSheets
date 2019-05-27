@@ -1,0 +1,62 @@
+\documentclass{article}
+
+\usepackage{cheatsheet}
+\usepackage[german]{babel}
+
+\begin{document}
+\noindent
+\begin{card}
+  \cardtitle{Bronchospastik}{\small\erw\footnotesize\kind}
+  \cardmeta{RLP\\2.01}
+
+  \note{Notes}{%
+    \begin{itemize}[twocol]
+      \item Einsatz der Atemhilfsmuskulatur
+      \item Lippenbremse
+      \item Patient beruhigen
+      \item CPAP/ASB erwägen
+    \end{itemize}
+  }
+
+  \note{Definition}{%
+    \begin{description}
+      \item[{\kind}:] Alter 2-12 Jahre
+      \item[{\erw}:] Alter > 12 Jahre
+    \end{description}
+  }
+
+  \drug{Salbutamol}{}{%
+    \dosierung{
+      {\erw}: \SI{2.5}{\milli\gram} p.i.
+      \hspace{0.5em} | \hspace{0.5em}
+      {\kind}: \SI{1.25}{\milli\gram} p.i.
+    }
+    \begin{kontraindikationen}
+      \item kreislaufwirksame Tachykardie / Tachyarrhythmie
+      \item (\frau) kreißende Patientin
+    \end{kontraindikationen}
+  }
+
+  \drug{Atrovent}{Ipratropiumbromid}{%
+    \dosierung{
+      {\erw}: \SI{500}{\micro\gram} p.i.
+      \hspace{0.5em} | \hspace{0.5em}
+      {\kind}: \SI{250}{\micro\gram} p.i.
+    }
+    \begin{kontraindikationen}
+      \item kreislaufwirksame Tachykardie / Tachyarrhythmie
+      \item Mukoviszidose
+      \item Engwinkelglaukom
+    \end{kontraindikationen}
+  }
+
+  \drug{SDH}{Prednisolon}{%
+    \dosierung{
+      {\erw}: \SI{100}{\milli\gram} i.v.
+      \hspace{0.5em} | \hspace{0.5em}
+      {\kind}: \SI{3}{\milli\gram\per\kgKG} i.v.
+    }
+  }
+
+\end{card}
+\end{document}
