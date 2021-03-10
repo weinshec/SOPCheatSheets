@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\usepackage{cheatsheet}
+\usepackage[german]{babel}
+
+\begin{document}
+\noindent
+\begin{card}
+  \cardtitle{Reanimation \\ unmittelbar Neugeborener}{\baby}
+  \cardmeta{RLP\\2.1}
+
+  \note{1 Minute}{%
+    \begin{itemize}[twocol]
+      \item \textbf{5 initiale Beatmungen} \\
+        Inspirationszeit: \SIrange{2}{3}{\second}
+      \item \wdh{} \textbf{5 Beatmungen} \\
+        Inspirationszeit: \SI{1}{\second}
+      %
+      \item EKG-Elektroden kleben
+      \item Pulsoxymetrie re.\ Hand
+      \item Wärmeerhalt beachten
+    \end{itemize}
+    \vspace{-3em}
+    \begin{center}
+      $\Rightarrow$ Atemfrequenz, Herzfrequenz beurteilen
+    \end{center}
+  }
+
+  \note{Zyklus {\footnotesize \wdh{}} \SI{30}{\second}}{%
+    \begin{itemize}[twocol]
+      \item \textbf{manuelle Beatmung} \\
+        Akzeptable \SpOx Werte
+        {\tiny%
+          \begin{tabular}{rc}
+            \SI{2}{\minute}  & \SI{60}{\percent} \\
+            \SI{3}{\minute}  & \SI{70}{\percent} \\
+            \SI{4}{\minute}  & \SI{80}{\percent} \\
+            \SI{5}{\minute}  & \SI{85}{\percent} \\
+            \SI{10}{\minute} & \SI{90}{\percent}
+          \end{tabular}
+        }
+      %
+      \item \textbf{Thoraxkompressionen 3:1} \\
+        (\SI{120}{\per\minute})
+      \item 2-Daumen-Technik
+    \end{itemize}
+  }
+
+  \drugWithNote{Suprarenin}{Adrenalin}{%
+    (falls {\puls} < \SI{60}{\per\minute})
+  }{%
+    \dosierung{%
+      \SI{0.01}{\milli\gram\per\kgKG} i.v. (\wdh{} \SIrange{3}{5}{\minute})
+      \vspace{-1em}
+    }
+  }
+
+  \note{4H's und HITS}{%
+    \begin{itemize}[twocol]
+      \setlength\itemsep{-0.3em}
+      \item \textbf{H}ypoxie
+      \item \textbf{H}ypovolämie
+      \item \textbf{H}ypothermie
+      \item \textbf{H}ypo-/Hyperkaliämie
+      %
+      \item \textbf{H}erzbeuteltamponade
+      \item \textbf{I}ntoxikation
+      \item \textbf{T}hromboembolie
+      \item \textbf{S}pannungspneumothorax
+    \end{itemize}
+  }
+\end{card}
+\end{document}

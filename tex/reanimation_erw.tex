@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage{cheatsheet}
+\usepackage[german]{babel}
+
+\begin{document}
+\noindent
+\begin{card}
+  \cardtitle{Reanimation \\ Erwachsene}{\erw}
+  \cardmeta{RLP\\2.1}
+
+  \note{1 Minute}{%
+    \begin{itemize}[twocol]
+      \item Defibrillator bereit machen
+      %
+      \item \textbf{Thoraxkompressionen 30:2} \\
+        (\SIrange{100}{120}{\per\minute})
+    \end{itemize}
+    \vspace{-3em}
+    \begin{center}
+      \textbf{PVT/VF:} min.\ \SI{150}{\joule} | \textbf{Asystolie/PEA:} --
+    \end{center}
+  }
+
+  \note{Zyklus {\footnotesize \wdh{}} \SI{2}{\minute}}{%
+    \begin{minipage}[t]{0.48\textwidth}
+      \begin{enumerate}
+        \item \textbf{Atemwegssicherung}
+        \item \textbf{i.v. Zugang} (ggf. i.o)
+      \end{enumerate}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+      \begin{itemize}
+        \item \textbf{Thoraxkompressionen 30:2} \\
+          (\SIrange{100}{120}{\per\minute})
+      \end{itemize}
+    \end{minipage}
+    \vspace{-0.5em}
+    \begin{center}
+      \textbf{PVT/VF:} \SI{200}{\joule} | \textbf{Asystolie/PEA:} --
+    \end{center}
+  }
+
+  \drugWithNote{Suprarenin}{Adrenalin}{%
+      \tiny \textbf{PVT/VF:} nach 3. \defi{} \\[-0.5em]
+      \tiny \textbf{Asystolie/PEA:} sofort
+  }{%
+    \dosierung{%
+      \SI{1}{\milli\gram\per\kgKG} i.v. (\inft{} \wdh{} \SIrange{3}{5}{\minute})
+      \vspace{-1em}
+    }
+  }
+
+  \drugWithNote{Cordarex}{Amiodaron}{%
+      \tiny \textbf{PVT/VF:} nach 3. \defi{} | 5. \defi{} \\[-0.5em]
+      \tiny \textbf{Asystolie/PEA:} --
+  }{%
+    \dosierung{%
+      \SI{300}{\milli\gram} i.v. (1x \wdh{} \SI{150}{\milli\gram} \SIrange{3}{5}{\minute})
+      \vspace{-1em}
+    }
+  }
+
+  \note{4H's und HITS}{%
+    \begin{itemize}[twocol]
+      \setlength\itemsep{-0.3em}
+      \item \textbf{H}ypoxie
+      \item \textbf{H}ypovolämie
+      \item \textbf{H}ypothermie
+      \item \textbf{H}ypo-/Hyperkaliämie
+      %
+      \item \textbf{H}erzbeuteltamponade
+      \item \textbf{I}ntoxikation
+      \item \textbf{T}hromboembolie
+      \item \textbf{S}pannungspneumothorax
+    \end{itemize}
+  }
+\end{card}
+\end{document}

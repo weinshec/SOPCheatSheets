@@ -107,7 +107,9 @@
 \newcommand{\uhr }{{\far\char"F017}}
 \newcommand{\arzt}{{\fas\char"F0F0}}
 \newcommand{\wdh }{{\fas\char"F2F9}}
+\newcommand{\inft}{{\fas\char"F534}}
 \newcommand{\puls}{{\fas\char"F21E}}
+\newcommand{\defi}{{\fas\char"F0E7}}
 
 \newcommand{\erw }{\mann\frau}
 \newcommand{\Ox}{O$_2$}
@@ -173,8 +175,8 @@
 \newcommand{\cardtitle}[2]{%
   \begin{scope}[even odd rule]
     \clip[cardcorners] \shapeCard;
-    \node[title, fill=cTitleBg, opacity=0.85] (\contentNode) at (0.5*\cardWidth,\cardHeight-\titleHeight/2) {%
-      \color{white}\uppercase{#1}
+    \node[title, fill=cTitleBg, text=white, opacity=0.85] (\contentNode) at (0.5*\cardWidth,\cardHeight-\titleHeight/2) {%
+      \uppercase{#1}
     };
     \node[icon, fill=white] at (0.1*\cardWidth, \cardHeight-0.75) {%
       \color{cTitleBg}#2
