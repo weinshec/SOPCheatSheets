@@ -3,3 +3,5 @@ description: Kleine Gedächtnisstützen für die Rettungsdienst-Jacke
 
 theme: jekyll-theme-cayman
 show_downloads: true
+github:
+  zip_url: https://github.com/weinshec/SOPCheatSheets/releases/latest/download/sop_cheatsheets.zip
